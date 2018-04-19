@@ -1,8 +1,6 @@
 <?php
 # vicidial.php - the web-based version of the astVICIDIAL client application
 #
-# this file was personalized by CesarVargas289 
-#
 # Copyright (C) 2017  Matt Florell <vicidial@gmail.com>    LICENSE: AGPLv2
 #
 # Other scripts that this application depends on:
@@ -409,7 +407,6 @@
 # 130508-2307 - Branched 2.7, trunk becomes 2.8
 # 130603-2209 - Added login lockout for 15 minutes after 10 failed logins, and other security fixes
 # 130615-1125 - Added recording_id to dispo url
-# this file was personalized by CesarVargas289 
 # 130625-0841 - Added more user log data on login
 # 130705-1439 - Added optional encrypted passwords compatibility
 # 130718-0745 - Added recording_filename to dispo_call_url
@@ -560,7 +557,6 @@
 # 170601-2017 - Added more agent events
 # 170609-1711 - Added 'commit' function to force immediate submission of Customer Information changes to database
 # 170629-1831 - Added some new agent_events entries
-# this file was personalized by CesarVargas289 
 # 170709-1116 - Added Xfer Hung Up notification
 # 170710-1802 - Added logging of clicks on webform buttons
 # 170725-2147 - Added counter(aec) to agent_events calls
@@ -1027,6 +1023,7 @@ if ($LogiNAJAX > 0)
 
     <script type="text/javascript">
 
+        
         <!--
         var BrowseWidth = 0;
         var BrowseHeight = 0;
@@ -3736,7 +3733,7 @@ if ($webphone_location == 'bar')
 $AVTheight = '0';
 if ($is_webphone) {$AVTheight = '20';}
 
-# this file was personalized by CesarVargas289 
+
 ################################################################
 ### BEGIN - build the callback calendar (12 months)          ###
 ################################################################
@@ -5569,7 +5566,7 @@ $CCAL_OUT .= "</table>";
                         {
                             button_click_log = button_click_log + "" + SQLdate + "-----XferHungUp---" + document.vicidial_form.xferchannel.value + "|";
                             xfercall_send_hangup('YES');
-                            alert_box("XFER LINE HUNG UP");
+                            alert("La llamada de consulta colgó ");
                         }
                         if ( (api_switch_lead.length > 0) && (api_switch_lead > 0) )
                         {
@@ -6524,7 +6521,7 @@ $CCAL_OUT .= "</table>";
                         var parkedby = protocol + "/" + extension;
                         xferredirect_query = "server_ip=" + server_ip + "&session_name=" + session_name + "&user=" + user + "&pass=" + pass + "&ACTION=RedirectToPark&format=text&channel=" + redirectdestination + "&call_server_ip=" + redirectdestserverip + "&queryCID=" + queryCID + "&exten=" + park_on_extension + "&ext_context=" + ext_context + "&ext_priority=1&extenName=park&parkedby=" + parkedby + "&session_id=" + session_id + "&CalLCID=" + CalLCID + "&uniqueid=" + document.vicidial_form.uniqueid.value + "&lead_id=" + document.vicidial_form.lead_id.value + "&campaign=" + campaign;
 
-                        document.getElementById("ParkControl").innerHTML ="<a href=\"#\" onclick=\"mainxfer_send_redirect('FROMParK','" + redirectdestination + "','" + redirectdestserverip + "','','','','YES');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_LB_grabparkedcall.gif") ?>\" border=\"0\" alt=\"Grab Parked Call\" /></a>";
+                        document.getElementById("ParkControl").innerHTML ="<a href=\"#\" onclick=\"mainxfer_send_redirect('FROMParK','" + redirectdestination + "','" + redirectdestserverip + "','','','','YES');return false;\"><button type=\"button\" class=\"btn btn-info\">Volver con usuario</button></a>";
                         if ( (ivr_park_call=='ENABLED') || (ivr_park_call=='ENABLED_PARK_ONLY') )
                         {
                             document.getElementById("ivrParkControl").innerHTML ="<img src=\"./images/<?php echo _QXZ("vdc_LB_grabivrparkcall_OFF.gif") ?>\" border=\"0\" alt=\"Grab IVR Parked Call\" />";
@@ -6553,7 +6550,7 @@ $CCAL_OUT .= "</table>";
 
                         xferredirect_query = "server_ip=" + server_ip + "&session_name=" + session_name + "&user=" + user + "&pass=" + pass + "&ACTION=RedirectFromPark&format=text&channel=" + redirectdestination + "&call_server_ip=" + redirectdestserverip + "&queryCID=" + queryCID + "&exten=" + dest_dialstring + "&ext_context=" + ext_context + "&ext_priority=1" + "&session_id=" + session_id + "&CalLCID=" + CalLCID + "&uniqueid=" + document.vicidial_form.uniqueid.value + "&lead_id=" + document.vicidial_form.lead_id.value + "&campaign=" + campaign;
 
-                        document.getElementById("ParkControl").innerHTML ="<a href=\"#\" onclick=\"mainxfer_send_redirect('ParK','" + redirectdestination + "','" + redirectdestserverip + "','','','','YES');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_LB_parkcall.gif") ?>\" border=\"0\" alt=\"Park Call\" /></a>";
+                        document.getElementById("ParkControl").innerHTML ="<a href=\"#\" onclick=\"mainxfer_send_redirect('ParK','" + redirectdestination + "','" + redirectdestserverip + "','','','','YES');return false;\"><button type=\"button\" class=\"btn btn-info\">Hold</button></a>";
                         if ( (ivr_park_call=='ENABLED') || (ivr_park_call=='ENABLED_PARK_ONLY') )
                         {
                             document.getElementById("ivrParkControl").innerHTML ="<a href=\"#\" onclick=\"mainxfer_send_redirect('ParKivr','" + redirectdestination + "','" + redirectdestserverip + "','','','','YES');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_LB_ivrparkcall.gif") ?>\" border=\"0\" alt=\"IVR Park Call\" /></a>";
@@ -6605,7 +6602,7 @@ $CCAL_OUT .= "</table>";
 
                         xferredirect_query = "server_ip=" + server_ip + "&session_name=" + session_name + "&user=" + user + "&pass=" + pass + "&ACTION=RedirectFromParkIVR&format=text&channel=" + redirectdestination + "&call_server_ip=" + redirectdestserverip + "&queryCID=" + queryCID + "&exten=" + dest_dialstring + "&ext_context=" + ext_context + "&ext_priority=1" + "&session_id=" + session_id + "&CalLCID=" + CalLCID + "&uniqueid=" + document.vicidial_form.uniqueid.value + "&lead_id=" + document.vicidial_form.lead_id.value + "&campaign=" + campaign;
 
-                        document.getElementById("ParkControl").innerHTML ="<a href=\"#\" onclick=\"mainxfer_send_redirect('ParK','" + redirectdestination + "','" + redirectdestserverip + "','','','','YES');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_LB_parkcall.gif") ?>\" border=\"0\" alt=\"Park Call\" /></a>";
+                        document.getElementById("ParkControl").innerHTML ="<a href=\"#\" onclick=\"mainxfer_send_redirect('ParK','" + redirectdestination + "','" + redirectdestserverip + "','','','','YES');return false;\"><button type=\"button\" class=\"btn btn-info\">Hold</button></a>";
                         if ( (ivr_park_call=='ENABLED') || (ivr_park_call=='ENABLED_PARK_ONLY') )
                         {
                             document.getElementById("ivrParkControl").innerHTML ="<a href=\"#\" onclick=\"mainxfer_send_redirect('ParKivr','" + redirectdestination + "','" + redirectdestserverip + "','','','','YES');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_LB_ivrparkcall.gif") ?>\" border=\"0\" alt=\"IVR Park Call\" /></a>";
@@ -8318,13 +8315,13 @@ $CCAL_OUT .= "</table>";
 
                                 document.getElementById("MainStatuSSpan").innerHTML = " <?php echo _QXZ("Called 3rd party:"); ?> " + called3rdparty + " " + status_display_content;
 
-                                document.getElementById("Leave3WayCall").innerHTML ="<a href=\"#\" onclick=\"leave_3way_call('FIRST','YES');return false;\"><button type=\"button\" class=\"btn btn-info btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Salir de conferencia </button></a>";
+                                document.getElementById("Leave3WayCall").innerHTML ="<a href=\"#\" onclick=\"leave_3way_call('FIRST','YES');return false;\"><button type=\"button\" class=\"btn btn-primary btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Salir de conferencia </button></a>";
 
-                                document.getElementById("DialWithCustomer").innerHTML ="<button type=\"button\" class=\"btn btn-primary btn-secondary\" border=\"0\" alt=\"Dial With Customer\" style=\"vertical-align:middle\"> Conferencia </button>";
+                                document.getElementById("DialWithCustomer").innerHTML ="<button type=\"button\" class=\"btn btn-secondary btn-sm\" border=\"0\" alt=\"Dial With Customer\" style=\"vertical-align:middle\"> Conferencia </button>";
 
-                                document.getElementById("ParkCustomerDial").innerHTML ="<button type=\"button\" class=\"btn btn-warning btn-secondary\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Llamada de consulta </button>";
+                                document.getElementById("ParkCustomerDial").innerHTML ="<button type=\"button\" class=\"btn btn-secondary btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Llamada de consulta </button>";
 
-                                document.getElementById("HangupXferLine").innerHTML ="<a href=\"#\" onclick=\"xfercall_send_hangup('YES');return false;\"><button type=\"button\" class=\"btn btn-danger btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Salir de conferencia </button></a>";
+                                document.getElementById("HangupXferLine").innerHTML ="<a href=\"#\" onclick=\"xfercall_send_hangup('YES');return false;\"><button type=\"button\" class=\"btn btn-danger btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Terminar llamada de consulta </button></a>";
 
                                 document.getElementById("ParkXferLine").innerHTML ="<a href=\"#\" onclick=\"mainxfer_send_redirect('ParKXfeR','" + lastxferchannel + "','" + server_ip + "','','','','YES');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_XB_parkxferline_ON.gif"); ?>\" border=\"0\" alt=\"Park Xfer Line\" style=\"vertical-align:middle\" /></a>";
 
@@ -8380,7 +8377,7 @@ $CCAL_OUT .= "</table>";
 
                                 document.getElementById("MainStatuSSpan").innerHTML = " <?php echo _QXZ("Called:"); ?> " + status_display_number + " " + status_display_content + " &nbsp;";
 
-                                document.getElementById("ParkControl").innerHTML ="<a href=\"#\" onclick=\"mainxfer_send_redirect('ParK','" + lastcustchannel + "','" + lastcustserverip + "','','','','YES');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_LB_parkcall.gif"); ?>\" border=\"0\" alt=\"Park Call\" /></a>";
+                                document.getElementById("ParkControl").innerHTML ="<a href=\"#\" onclick=\"mainxfer_send_redirect('ParK','" + lastcustchannel + "','" + lastcustserverip + "','','','','YES');return false;\"><button type=\"button\" class=\"btn btn-info\">Hold</button></a>";
                                 if ( (ivr_park_call=='ENABLED') || (ivr_park_call=='ENABLED_PARK_ONLY') )
                                 {
                                     document.getElementById("ivrParkControl").innerHTML ="<a href=\"#\" onclick=\"mainxfer_send_redirect('ParKivr','" + lastcustchannel + "','" + lastcustserverip + "','','','','YES');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_LB_ivrparkcall.gif"); ?>\" border=\"0\" alt=\"IVR Park Call\" /></a>";
@@ -8495,7 +8492,7 @@ $CCAL_OUT .= "</table>";
 
             if (taskCheckOR == 'YES')
             {
-                document.getElementById("DialWithCustomer").innerHTML ="<a href=\"#\" onclick=\"SendManualDial('YES','YES');return false;\"><button type=\"button\" class=\"btn btn-primary btn-sm\" border=\"0\" alt=\"Dial With Customer\" style=\"vertical-align:middle\"> Conferencia </button></a>";
+                document.getElementById("DialWithCustomer").innerHTML ="<a href=\"#\" onclick=\"SendManualDial('YES','YES');return false;\"><button type=\"button\" class=\"btn btn-success btn-sm\" border=\"0\" alt=\"Dial With Customer\" style=\"vertical-align:middle\"> Conferencia </button></a>";
                 document.getElementById("ParkCustomerDial").innerHTML ="<a href=\"#\" onclick=\"xfer_park_dial('YES');return false;\"><button type=\"button\" class=\"btn btn-warning btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Llamada de consulta </button></a>";
             }
         }
@@ -8804,7 +8801,6 @@ $CCAL_OUT .= "</table>";
 
     // ################################################################################
     // Send the Manual Dial Next Number request
-    // this file was personalized by CesarVargas289 
     function ManualDialNext(mdnCBid,mdnBDleadid,mdnDiaLCodE,mdnPhonENumbeR,mdnStagE,mdVendorid,mdgroupalias,mdtype,MDNclick)
     {
         if (MDNclick=='YES')
@@ -9910,7 +9906,7 @@ $CCAL_OUT .= "</table>";
         {button_click_log = button_click_log + "" + SQLdate + "-----AutoDial_ReSume_PauSe---" + taskaction + " " + taskagentlog + " " + taskstatuschange + " " + temp_reason + " " + temp_auto + " " + temp_auto_code + "|";}
         if (VD_live_customer_call==1)
         {
-            alert_box("<?php echo _QXZ("STILL A LIVE CALL! You must hang it up first."); ?>\n" + VD_live_customer_call + "\n" + VDRP_stage);
+            alert_box("<?php echo _QXZ("AÚN SIGUES EN LLAMADA! Debes colgar primero para salir."); ?>\n" + VD_live_customer_call + "\n" + VDRP_stage);
             button_click_log = button_click_log + "" + SQLdate + "-----ON_CALL_pause_resume_stopped---" + VD_live_customer_call + " " + VDRP_stage + "|";
         }
         else
@@ -10677,7 +10673,7 @@ $CCAL_OUT .= "</table>";
                                 document.getElementById("MainStatuSSpan").innerHTML = " <?php echo _QXZ("Incoming:"); ?> " + dial_display_number + " " + custom_call_id + " " + temp_status_display_ingroup + "&nbsp; " + VDIC_fronter + " " + status_display_content;
                             }
 
-                            document.getElementById("ParkControl").innerHTML ="<a href=\"#\" onclick=\"mainxfer_send_redirect('ParK','" + lastcustchannel + "','" + lastcustserverip + "','','','','YES');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_LB_parkcall.gif"); ?>\" border=\"0\" alt=\"Park Call\" /></a>";
+                            document.getElementById("ParkControl").innerHTML ="<a href=\"#\" onclick=\"mainxfer_send_redirect('ParK','" + lastcustchannel + "','" + lastcustserverip + "','','','','YES');return false;\"><button type=\"button\" class=\"btn btn-info\">Hold</button></a>";
                             if ( (ivr_park_call=='ENABLED') || (ivr_park_call=='ENABLED_PARK_ONLY') )
                             {
                                 document.getElementById("ivrParkControl").innerHTML ="<a href=\"#\" onclick=\"mainxfer_send_redirect('ParKivr','" + lastcustchannel + "','" + lastcustserverip + "','','','','YES');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_LB_ivrparkcall.gif"); ?>\" border=\"0\" alt=\"IVR Park Call\" /></a>";
@@ -11440,7 +11436,7 @@ $CCAL_OUT .= "</table>";
                             document.getElementById("HangupControl").innerHTML = "<a href=\"#\" onclick=\"dialedcall_send_hangup('','','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_hangupcustomer.gif"); ?>\"  border=\"0\" alt=\"Hangup Customer\" title=\"Colgar\"/></a>";
 
                             /*
-							document.getElementById("ParkControl").innerHTML ="<a href=\"#\" onclick=\"mainxfer_send_redirect('ParK','" + lastcustchannel + "','" + lastcustserverip + "','','','','YES');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_LB_parkcall.gif"); ?>\" border=\"0\" alt=\"Park Call\" /></a>";
+							document.getElementById("ParkControl").innerHTML ="<a href=\"#\" onclick=\"mainxfer_send_redirect('ParK','" + lastcustchannel + "','" + lastcustserverip + "','','','','YES');return false;\"><button type=\"button\" class=\"btn btn-info\">Hold</button></a>";
 							if ( (ivr_park_call=='ENABLED') || (ivr_park_call=='ENABLED_PARK_ONLY') )
 								{
 								document.getElementById("ivrParkControl").innerHTML ="<a href=\"#\" onclick=\"mainxfer_send_redirect('ParKivr','" + lastcustchannel + "','" + lastcustserverip + "','','','','YES');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_LB_ivrparkcall.gif"); ?>\" border=\"0\" alt=\"IVR Park Call\" /></a>";
@@ -11511,8 +11507,6 @@ $CCAL_OUT .= "</table>";
 									document.getElementById("ReQueueCall").innerHTML =  "<img src=\"./images/<?php echo _QXZ("vdc_LB_requeue_call_OFF.gif"); ?>\" border=\"0\" alt=\"Re-Queue Call\" />";
 									}
 								}
-							
-							// this file was personalized by CesarVargas289 
 					*/
                             // Build transfer pull-down list
                             var loop_ct = 0;
@@ -12530,7 +12524,7 @@ $CCAL_OUT .= "</table>";
 
             //  document.getElementById("Leave3WayCall").innerHTML ="<img src=\"./images/<?php echo _QXZ("vdc_XB_leave3waycall_OFF.gif"); ?>\" border=\"0\" alt=\"LEAVE 3-WAY CALL\" />";
 
-            document.getElementById("DialWithCustomer").innerHTML ="<a href=\"#\" onclick=\"SendManualDial('YES','YES');return false;\"><button type=\"button\" class=\"btn btn-primary btn-sm\" border=\"0\" alt=\"Dial With Customer\" style=\"vertical-align:middle\"> Conferencia </button></a>";
+            document.getElementById("DialWithCustomer").innerHTML ="<a href=\"#\" onclick=\"SendManualDial('YES','YES');return false;\"><button type=\"button\" class=\"btn btn-success btn-sm\" border=\"0\" alt=\"Dial With Customer\" style=\"vertical-align:middle\"> Conferencia </button></a>";
 
             document.getElementById("ParkCustomerDial").innerHTML ="<a href=\"#\" onclick=\"xfer_park_dial('YES');return false;\"><button type=\"button\" class=\"btn btn-warning btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Llamada de consulta </button></a>";
 
@@ -13091,7 +13085,7 @@ $CCAL_OUT .= "</table>";
         document.getElementById("callchannel").innerHTML = '';
         document.vicidial_form.callserverip.value = '';
         document.vicidial_form.xferchannel.value = '';
-        document.getElementById("DialWithCustomer").innerHTML ="<a href=\"#\" onclick=\"SendManualDial('YES','YES');return false;\"><button type=\"button\" class=\"btn btn-primary btn-sm\" border=\"0\" alt=\"Dial With Customer\" style=\"vertical-align:middle\"> Conferencia </button></a>";
+        document.getElementById("DialWithCustomer").innerHTML ="<a href=\"#\" onclick=\"SendManualDial('YES','YES');return false;\"><button type=\"button\" class=\"btn btn-success btn-sm\" border=\"0\" alt=\"Dial With Customer\" style=\"vertical-align:middle\"> Conferencia </button></a>";
         document.getElementById("ParkCustomerDial").innerHTML ="<a href=\"#\" onclick=\"xfer_park_dial('YES');return false;\"><button type=\"button\" class=\"btn btn-warning btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Llamada de consulta </button></a>";
         document.getElementById("HangupBothLines").innerHTML ="<a href=\"#\" onclick=\"bothcall_send_hangup('YES');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_XB_hangupbothlines.gif"); ?>\" border=\"0\" alt=\"Hangup Both Lines\" style=\"vertical-align:middle\" /></a>";
 
@@ -13152,7 +13146,7 @@ $CCAL_OUT .= "</table>";
         document.getElementById("callchannel").innerHTML = '';
         document.vicidial_form.callserverip.value = '';
         document.vicidial_form.xferchannel.value = '';
-        document.getElementById("DialWithCustomer").innerHTML ="<a href=\"#\" onclick=\"SendManualDial('YES','YES');return false;\"><button type=\"button\" class=\"btn btn-primary btn-sm\" border=\"0\" alt=\"Dial With Customer\" style=\"vertical-align:middle\"> Conferencia </button></a>";
+        document.getElementById("DialWithCustomer").innerHTML ="<a href=\"#\" onclick=\"SendManualDial('YES','YES');return false;\"><button type=\"button\" class=\"btn btn-success btn-sm\" border=\"0\" alt=\"Dial With Customer\" style=\"vertical-align:middle\"> Conferencia </button></a>";
         document.getElementById("ParkCustomerDial").innerHTML ="<a href=\"#\" onclick=\"xfer_park_dial('YES');return false;\"><button type=\"button\" class=\"btn btn-warning btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Llamada de consulta </button></a>";
         document.getElementById("HangupBothLines").innerHTML ="<a href=\"#\" onclick=\"bothcall_send_hangup('YES');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_XB_hangupbothlines.gif"); ?>\" border=\"0\" alt=\"Hangup Both Lines\" style=\"vertical-align:middle\" /></a>";
 
@@ -14365,7 +14359,6 @@ $CCAL_OUT .= "</table>";
 		   xmlhttp = false;
 		  }
 		 }
-		 // this file was personalized by CesarVargas289 
 		@end @*/
         if (!xmlhttp && typeof XMLHttpRequest!='undefined')
         {
@@ -14483,7 +14476,7 @@ $CCAL_OUT .= "</table>";
         {
             if (VD_live_customer_call==1)
             {
-                alert("<?php echo _QXZ("STILL A LIVE CALL! Hang it up then you can log out."); ?>\n" + VD_live_customer_call);
+                alert("<?php echo _QXZ("AÚN SIGUES EN LLAMADA! Cuelgala para poder salir."); ?>\n" );
             }
             else
             {
@@ -17380,7 +17373,7 @@ $CCAL_OUT .= "</table>";
                     if (parked_ss < 10)
                     {parked_ss = "0" + parked_ss;}
                     var parked_mmss = parked_mm + ":" + parked_ss;
-                    document.getElementById("ParkCounterSpan").innerHTML = "<?php echo _QXZ("Time On Park:"); ?> " + parked_mmss;
+                    document.getElementById("ParkCounterSpan").innerHTML = "<?php echo _QXZ("Tiempo en espera"); ?> " + parked_mmss;
                 }
                 if (customer_3way_hangup_counter_trigger > 0)
                 {
@@ -18272,7 +18265,10 @@ $CCAL_OUT .= "</table>";
             document.getElementById("gender_list").selectedIndex = gIndex;
         }
     }
-
+    
+    document.f1.xfernumber.value = 'D1';
+    document.getElementById(xfernumber).setAttribute('D1');
+    
 </script>
 
 
@@ -18326,13 +18322,14 @@ $zi=2;
 
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto pull-right">
+                <div >
                 <li class="nav-item active">
                     <a class="nav-link">
-                        <?php echo "<a href=\"#\" onclick=\"NormalLogout();return false;needToConfirmExit = false;\">" . _QXZ("Cerrar Sesión") . "</a>\n"; ?>
+                        <?php echo "<a href=\"#\" onclick=\"NormalLogout();return false;needToConfirmExit = false;\"> <button type=\"button\" class=\"btn btn-default btn-sm\"><span class=\"glyphicon glyphicon-log-out\"></span> Cerrar Sesión</button> </a>\n"; ?>
                     </a>
                 </li>
-
+				</div>
             </ul>
         </div>
         </div>
@@ -18452,43 +18449,7 @@ $zi=2;
                             </span>
 
                         </div>
-                        <div>
-                            </font><font class="body_tiny"><span id="RecorDingFilename"
-                                                                 style="display: none;"></span></font><br/>
-                            <font class="body_small"><span id="RecorDID" style="display: none;"></span></font><br/>
-                            <center>
-                                <!-- <a href=\"#\" onclick=\"conf_send_recording('MonitorConf','" + head_conf + "','','','');return false;\">Record</a> -->
-                                <span style="background-color: <?php echo $MAIN_COLOR ?>; display: none; "
-                                      id="RecorDControl"><a href="#"
-                                                            onclick="conf_send_recording('MonitorConf',session_id,'','','','YES');return false;"><img
-                                                src="./images/<?php echo _QXZ("vdc_LB_startrecording.gif"); ?>"
-                                                border="0" alt="Start Recording"/></a></span><br/>
-                                <span id="SpacerSpanA" style="display: none;"><img
-                                            src="./images/<?php echo _QXZ("blank.gif"); ?>" width="145px" height="16px"
-                                            border="0"/></span><br/>
-                                <span style="background-color: #FFFFFF; display:none;" id="WebFormSpan"><img
-                                            src="./images/<?php echo _QXZ("vdc_LB_webform_OFF.gif"); ?>" border="0"
-                                            alt="Web Form"/></span><br/>
-                                <?php
-                                if ($enable_second_webform > 0) {
-                                    echo "<span style=\"background-color: #FFFFFF\" id=\"WebFormSpanTwo\"><img src=\"./images/" . _QXZ("vdc_LB_webform_two_OFF.gif") . "\" border=\"0\" alt=\"Web Form 2\" /></span><br />\n";
-                                }
-                                if ($enable_third_webform > 0) {
-                                    echo "<span style=\"background-color: #FFFFFF\" id=\"WebFormSpanThree\"><img src=\"./images/" . _QXZ("vdc_LB_webform_three_OFF.gif") . "\" border=\"0\" alt=\"Web Form 3\" /></span><br />\n";
-                                }
-                                ?>
-                                <font class="body_small_bold"><span id="ParkCounterSpan"> &nbsp; </span></font><br/>
-                                <span style="background-color: <?php echo $MAIN_COLOR ?>; display:none;" id="ParkControl"><img
-                                            src="./images/<?php echo _QXZ("vdc_LB_parkcall_OFF.gif"); ?>" border="0"
-                                            alt="Park Call"/></span><br/>
-                                <?php
-                                if (($ivr_park_call == 'ENABLED') or ($ivr_park_call == 'ENABLED_PARK_ONLY')) {
-                                    echo "<span style=\"background-color: $MAIN_COLOR\" id=\"ivrParkControl\"><img src=\"./images/" . _QXZ("vdc_LB_ivrparkcall_OFF.gif") . "\" border=\"0\" alt=\"IVR Park Call\" /></span><br />\n";
-                                } else {
-                                    echo "<span style=\"background-color: $MAIN_COLOR\" id=\"ivrParkControl\"></span>\n";
-                                }
-                                ?>
-                        </div>
+                        
                         <td width="<?php echo $SDwidth ?>px" align="left" valign="top">
                             <input type="hidden" name="lead_id" id="lead_id" value=""/>
                             <input type="hidden" name="list_id" id="list_id" value=""/>
@@ -18508,6 +18469,8 @@ $zi=2;
                             <input type="hidden" name="email_row_id" id="email_row_id" value=""/>
                             <input type="hidden" name="chat_id" id="chat_id" value=""/>
                             <input type="hidden" name="customer_chat_id" id="customer_chat_id" value=""/>
+                            
+                         </td>
 
                 </div>
             </div>
@@ -18924,99 +18887,72 @@ $zi=2;
                 </table>
                 </td></tr>
                 </table>
-                    <div align="center" id="TransferMain">
-                        <table bgcolor="#CCCCFF">
-                            <tr valign="top">
-                                <td align="left" height="30px">
-	<span class="text_input" id="TransferMaindiv">
-	<font class="body_text">
-    <h4 title="Transferir Llamada" border="0" alt="Transfer - Conference"
-         style="vertical-align:middle"> Funciones de transferencia de llamada </h4> &nbsp; &nbsp; &nbsp; &nbsp; <span id="XfeRDiaLGrouPSelecteD"></span> &nbsp; &nbsp; <span
-                id="XfeRCID"></span><br/>
-
-    <table cellpadding="0" cellspacing="1" border="0">
-    <tr>
-    <td align="left" colspan="3">
-    <span id="XfeRGrouPLisT" style="display:none;"><select size="1" name="XfeRGrouP" id="XfeRGrouP" class="cust_form"
-                                                           onChange="XferAgentSelectLink();return false;"><option>--  --</option></select></span>
-
-    <span style="background-color: <?php echo $MAIN_COLOR ?>; display:none; " id="LocalCloser">" border="0" alt="LOCAL CLOSER" style="vertical-align:middle" /></span> &nbsp; &nbsp;
- </td>
-    <td align="left">
-    <span style="background-color: <?php echo $MAIN_COLOR ?>" id="HangupXferLine">
-    <button type="button" class="btn btn-danger btn-sm"border="0" alt="Hangup Xfer Line"style="vertical-align:middle" title="Terminará llamada de consulta pero no la del cliente"> Terminar llamada de consulta</button></span>
-	&nbsp;
-	<span style="background-color: <?php echo $MAIN_COLOR ?>" id="ParkXferLine"><img
-                src="./images/<?php echo _QXZ("vdc_XB_parkxferline_OFF.gif"); ?>" border="0" alt="Park Xfer Line"
-                style="vertical-align:middle"/></span>
- </td>
-
-    <td align="left" colspan="2">
-    <input type="text" style="display: none;" size="2" name="xferlength" id="xferlength" maxlength="4" class="cust_form"
-           readonly="readonly"/>
-	&nbsp;
-    <input type="text" style="display: none;" size="12" name="xferchannel" id="xferchannel" maxlength="200"
-           class="cust_form" readonly="readonly"/>
- </td>
-    <td align="left">
-    <span id="consultative_checkbox" style="display:none;"><input type="checkbox" name="consultativexfer"
-                                                                  id="consultativexfer" size="1" value="0"><font
-                class="body_tiny">  &nbsp;</font></span>
- </td>
-    <td align="left">
-    <span style="background-color: <?php echo $MAIN_COLOR ?>; display:none;" id="HangupBothLines"><a href="#"
-                                                                                                     onclick="bothcall_send_hangup('YES');return false;"></a></span>
- </td>
- </tr>
-
-    <tr>
-    <td align="left" colspan="2">
-    <label border="0" alt="Number to call"
-         style="vertical-align:middle">Número a llamar: </label>
-        <?php
-        if ($hide_xfer_number_to_dial == 'ENABLED') {
-            ?>
-            <input type="hidden" name="xfernumber" readonly="readonly" id="xfernumber"
-                   value="<?php echo $preset_populate ?>"/> &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
-            <?php
-        } else {
-            ?>
-            <input type="text" size="20" name="xfernumber" readonly="readonly" id="xfernumber" maxlength="25"
-                   class="cust_form" value="<?php echo $preset_populate ?>"/> &nbsp;
-            <?php
-        }
-        ?>
-        <span id="agentdirectlink"><font class="body_small_bold"><a href="#"
-                                                                    onclick="XferAgentSelectLaunch();return false;"><?php echo _QXZ("AGENTS"); ?></a></font></span>
-    <input type="hidden" name="xferuniqueid" id="xferuniqueid"/>
-    <input type="hidden" name="xfername" id="xfername"/>
-    <input type="hidden" name="xfernumhidden" id="xfernumhidden"/>
- </td>
-    <td align="left">
-    <span id="dialoverride_checkbox" style="display: none;"><input type="checkbox" name="xferoverride" id="xferoverride"
-                                                                   size="1" value="0"><font
-                class="body_tiny"/> <?php if ($manual_dial_override_field == 'DISABLED') {
-            echo " " . _QXZ("DISABLED");
-        } ?></font></span>
-                                </td>
-                                <td align="left">
-                                                <span style="background-color: <?php echo $MAIN_COLOR ?>" id="Leave3WayCall">
-                                                	<a href="#"onclick="leave_3way_call('FIRST','YES');return false;">
-                                                      	<button type="button" class="btn btn-info btn-sm" border="0" alt="Park Xfer Line"style="vertical-align:middle" title="Salir de conferencia pero continuar la llamada entre el supervisor y el cliente.">Salir de conferencia</button>
-                                                    </a>
-                                                  </span>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td align="left" COLSPAN="4">
-                                                <span style="background-color: <?php echo $MAIN_COLOR ?>; display: none;"
-                                                      id="DialBlindTransfer"></span>
-                                    &nbsp;
+                <div align="left" id="TransferMain">
+                
+                	<table>
+                		<tbody>
+                			<tr>
+                				<td colspan="4">
+                					
+									<font class="body_text">
+								    <h4 title="Transferir Llamada" border="0" alt="Transfer - Conference" style="vertical-align:middle"> Funciones de transferencia de llamada </h4> &nbsp; &nbsp; &nbsp; &nbsp; 
+                				</td>
+                			</tr>      
+                			<tr>
+                				 <td align="left" colspan="4">
+    							 	<span style="background-color: <?php echo $MAIN_COLOR ?>" id="HangupXferLine">
+    									<button type="button" class="btn btn-secondary btn-sm"border="0" alt="Hangup Xfer Line"style="vertical-align:middle" title="Terminará llamada de consulta pero no la del cliente"> Terminar llamada de consulta</button>
+    								</span>
+									&nbsp;
+									 <span vertical-align="middle" style="background-color: <?php echo $MAIN_COLOR ?>; " id="ParkControl"></span>
+ 									&nbsp;
+									<span style="display:none;" id="ParkXferLine"><img src="./images/<?php echo _QXZ("vdc_XB_parkxferline_OFF.gif"); ?>" border="0" alt="Park Xfer Line" style="vertical-align:middle"/></span>
+ 									&nbsp;
+ 								</td>
+   								<td align="left">
+    								<input type="text" style="display: none;" size="2" name="xferlength" id="xferlength" maxlength="4" class="cust_form" readonly="readonly"/>
+									&nbsp;
+    								<input type="text" style="display: none;" size="12" name="xferchannel" id="xferchannel" maxlength="200" class="cust_form" readonly="readonly"/>
+ 								</td>
+    							<td align="left">
+    								<span id="consultative_checkbox" style="display:none;"><input type="checkbox" name="consultativexfer" id="consultativexfer" size="1" value="0"><font class="body_tiny">  </font>
+    								</span>
+ 								</td>
+    							<td align="left">
+    								<span style="background-color: <?php echo $MAIN_COLOR ?>; display:none;" id="HangupBothLines"><a href="#" onclick="bothcall_send_hangup('YES');return false;"></a></span> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                				</td>
+                			</tr>
+                			<tr>
+                				<td align="left">
+                					<label border="0" alt="Number to call" style="vertical-align:middle">Número a llamar: </label>
+        								<?php
+                                            if ($hide_xfer_number_to_dial == 'ENABLED') {
+                                        ?>
+                                     &nbsp;    
+						            <input type="hidden" class="form-control" name="xfernumber" readonly="readonly" id="xfernumber" value="<?php echo $preset_populate ?>"/>s
+            							<?php
+                                            } else {
+                                        ?>
+						            <input type="text"  size="5" name="xfernumber" readonly="readonly" id="xfernumber" maxlength="25" class="cust_form" value="<?php echo $preset_populate ?>"/>
+            							<?php
+                                            }
+                                        ?>
+                                     &nbsp;   
+                                      <span style="background-color: <?php echo $MAIN_COLOR ?>" id="Leave3WayCall">
+                                    	<a href="#"onclick="leave_3way_call('FIRST','YES');return false;">
+                                        	<button type="button" class="btn btn-primary btn-sm" border="0" alt="Park Xfer Line"style="vertical-align:middle" title="Salir de conferencia pero continuar la llamada entre el supervisor y el cliente.">Salir de conferencia</button>
+                                        </a>
+                                    </span>
+                                    <br>&nbsp;&nbsp;&nbsp;
+                				</td>
+                			</tr>
+                			<tr>
+                				<td align="left" COLSPAN="8">
+                                	<span style="background-color: <?php echo $MAIN_COLOR ?>; display: none;" id="DialBlindTransfer"></span>
+                              
                                     <span style="background-color: <?php echo $MAIN_COLOR ?>"id="DialWithCustomer">
                                     	<a href="#"onclick="SendManualDial('YES','YES');return false;">
-                                        	<button type="button" class="btn btn-primary btn-sm"border="0" alt="Dial With Customer"style="vertical-align:middle"> Conferencia </button>
-                                        	
+                                        	<button type="button" class="btn btn-success btn-sm"border="0" alt="Dial With Customer"style="vertical-align:middle"> Conferencia </button>	
                                         </a>
                                     </span>
                                     &nbsp;
@@ -19029,41 +18965,107 @@ $zi=2;
                                     <?php
                                     if ($enable_xfer_presets == 'ENABLED') {
                                         ?>
-                                        <span style="background-color: <?php echo $MAIN_COLOR ?>"
-                                              id="PresetPullDown"><a href="#"
-                                                                     onclick="generate_presets_pulldown('YES');return false;"><img
-                                                        src="./images/<?php echo _QXZ("vdc_XB_presetsbutton.gif"); ?>"
-                                                        border="0" alt="Presets Button"
-                                                        style="vertical-align:middle"/></a></span>
+                                        <span style="background-color: <?php echo $MAIN_COLOR ?>" id="PresetPullDown"><a href="#" onclick="generate_presets_pulldown('YES');return false;"><img src="./images/<?php echo _QXZ("vdc_XB_presetsbutton.gif"); ?>" border="0" alt="Presets Button" style="vertical-align:middle"/></a>
+                                        </span>
                                         <?php
-                                    } else {
-                                        if (($enable_xfer_presets == 'CONTACTS') and ($VU_preset_contact_search != 'DISABLED')) {
-                                            ?>
-                                            <span style="background-color: <?php echo $MAIN_COLOR ?>"
-                                                  id="ContactPullDown"><a href="#"
-                                                                          onclick="generate_contacts_search('YES');return false;"><img
-                                                            src="./images/<?php echo _QXZ("vdc_XB_contactsbutton.gif"); ?>"
-                                                            border="0" alt="Contacts Button"
-                                                            style="vertical-align:middle"/></a></span>
+                                            } else {
+                                            if (($enable_xfer_presets == 'CONTACTS') and ($VU_preset_contact_search != 'DISABLED')) {
+                                        ?>
+                                        <span style="background-color: <?php echo $MAIN_COLOR ?>" id="ContactPullDown"><a href="#" onclick="generate_contacts_search('YES');return false;"><img src="./images/<?php echo _QXZ("vdc_XB_contactsbutton.gif"); ?>" border="0" alt="Contacts Button" style="vertical-align:middle"/></a>
+                                        </span>
                                             <?php
-                                        } else {
+                                                } else {
                                             ?>
-                                            <font class="body_tiny">
-                                                <a href="#" onclick="DtMf_PreSet_a();return false;">D1</a>
-                                                <a href="#" onclick="DtMf_PreSet_b();return false;">D2</a>
-                                                <a href="#" onclick="DtMf_PreSet_c();return false;">D3</a>
-                                                <a href="#" onclick="DtMf_PreSet_d();return false;">D4</a>
-                                                <a href="#" onclick="DtMf_PreSet_e();return false;">D5</a>
-                                            </font>
-                                            <?php
-                                        }
-                                    }
-                                    ?>
+                                        <font class="body_tiny">
+                                        	<a href="#" onclick="DtMf_PreSet_a();return false;">D1</a>
+                                            <a href="#" onclick="DtMf_PreSet_b();return false;">D2</a>
+                                            <a href="#" onclick="DtMf_PreSet_c();return false;">D3</a>
+                                            <a href="#" onclick="DtMf_PreSet_d();return false;">D4</a>
+                                            <a href="#" onclick="DtMf_PreSet_e();return false;">D5</a>
+                                        </font>
+                                        <?php
+                                            }
+                                           }
+                                        ?>
                                     &nbsp;
-                                    <span style="background-color: <?php echo $MAIN_COLOR ?>; display: none;"
-                                          id="DialBlindVMail"></span>
+                                    <span style="background-color: <?php echo $MAIN_COLOR ?>; display: none;" id="DialBlindVMail">
+                                    </span>
                                 </td>
-                            </tr>
+                			</tr>
+                		</tbody>
+                	</table>
+                </div>
+              
+                
+                
+                
+                
+                
+                
+                
+                    <div align="center" id="TransferMain">
+                        <table bgcolor="#CCCCFF">
+                           
+	
+
+    <table cellpadding="0" cellspacing="1" border="0">
+    <tr>
+    
+   
+<td align="left">
+<div>
+ 						<span style="display:none;" id="WebFormSpan"></span><br/>
+                           <span id="RecorDingFilename" style="display: none;"></span>
+                           <span id="RecorDID" style="display: none;"></span>
+                            
+                                <!-- <a href=\"#\" onclick=\"conf_send_recording('MonitorConf','" + head_conf + "','','','');return false;\">Record</a> -->
+                                <span style=" display: none; "id="RecorDControl"></span>
+                                <span id="SpacerSpanA" style="display: none;"></span>
+                               
+                                <?php
+                                if ($enable_second_webform > 0) {
+                                    echo "<span style=\"display:none;\" id=\"WebFormSpanTwo\"></span>\n";
+                                }
+                                if ($enable_third_webform > 0) {
+                                    echo "<span style=\"display:none;\" id=\"WebFormSpanThree\"></span>\n";
+                                } 
+                                ?>
+                                
+                                 <font class="body_small_bold"><span id="ParkCounterSpan" style="display:none;"> &nbsp; </span></font><br/>
+                                 
+                                 
+                                 <span class="text_input" id="TransferMaindiv"></span>
+                                 <span id="XfeRDiaLGrouPSelecteD"></span> &nbsp; &nbsp; <span id="XfeRCID"></span>
+                               
+                        </div>
+                        
+                        </td>
+                        <td align="left">
+    							 	<span id="XfeRGrouPLisT" style="display:none;"><select size="1" name="XfeRGrouP" id="XfeRGrouP" class="cust_form" onChange="XferAgentSelectLink();return false;"><option>--  --</option></select>
+    							 	</span>
+    								<span id="LocalCloser" style="display:none;"></span> &nbsp; &nbsp;
+ 								</td>
+   
+ </tr>
+ 
+ <tr>
+  <td align="left" colspan="2">
+    							 	
+        							<span id="agentdirectlink"><font class="body_small_bold"><a href="#" onclick="XferAgentSelectLaunch();return false;"><?php echo _QXZ("AGENTS"); ?></a></font>
+        							</span>
+    								<input type="hidden" name="xferuniqueid" id="xferuniqueid"/>
+								    <input type="hidden" name="xfername" id="xfername"/>
+								    <input type="hidden" name="xfernumhidden" id="xfernumhidden"/>
+								 </td>
+    							 <td align="left">
+								    <span id="dialoverride_checkbox" style="display: none;"><input type="checkbox" name="xferoverride" id="xferoverride" size="1" value="0"><font class="body_tiny"/> <?php if ($manual_dial_override_field == 'DISABLED') { echo " " . _QXZ("DISABLED");} ?></font>
+								    </span>
+                                </td>
+                                <td align="left">
+                                	 <span style="position:absolute;left:300px;top:<?php echo $MBheight ?>px;z-index:<?php $zi++; echo $zi ?>;" id="DiaLlOgButtonspan">
+                                </td>
+ 
+ </tr>
 
                         </table>
 
@@ -19086,7 +19088,7 @@ $zi=2;
     <!-- Footer -->
     <footer class="py-5 bg-dark">
         <div class="container">
-            <p class="m-0 text-center text-white">2018</p>
+            <p class="m-0 text-center text-white">Dish 2018</p>
         </div>
         <!-- /.container -->
     </footer>
@@ -19097,7 +19099,7 @@ $zi=2;
     <span style="position:absolute;left:0px;top:<?php echo $DBheight ?>px;z-index:<?php $zi++; echo $zi ?>;" id="debugbottomspan"></span>
 
 
-    <span style="position:absolute;left:300px;top:<?php echo $MBheight ?>px;z-index:<?php $zi++; echo $zi ?>;" id="DiaLlOgButtonspan">
+   
 <span id="ManuaLDiaLButtons"><font class="body_text"><span id="MDstatusSpan"><a href="#" onclick="NeWManuaLDiaLCalL('NO','','','','','YES');return false;"><?php echo _QXZ("MANUAL DIAL"); ?></a></span>&nbsp; &nbsp; <a href="#" onclick="NeWManuaLDiaLCalL('FAST','','','','','YES');return false;"><?php echo _QXZ("FAST DIAL"); ?></a></span>&nbsp; &nbsp; </font>
         <span id="CallLogButtons"><font class="body_text"><span id="CallLogLinkSpan"><a href="#" onclick="VieWCalLLoG();return false;"><?php echo _QXZ("VIEW CALL LOG"); ?></a></span><br /></font></span>
 </span>
@@ -19814,8 +19816,6 @@ if ($agent_display_dialable_leads > 0)
 	</td></tr></table>
 </span>
 
-<!-- this file was personalized by CesarVargas289  -->  
-
     <span style="position:absolute;left:0px;top:0px;z-index:<?php $zi++; echo $zi ?>;" id="SearcHForMDisplaYBox">
 	<table border="0" bgcolor="#CCFFCC" width="<?php echo $CAwidth ?>px" height="<?php echo $WRheight ?>px"><tr><td align="center" valign="top"> &nbsp; &nbsp; &nbsp; <font class="sd_text"><?php echo _QXZ("SEARCH FOR A LEAD:"); ?></font> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <font class="sh_text"><a href="#" onclick="LeaDSearcHVieWClose();return false;"><?php echo _QXZ("close"); ?> [X]</a><br />
                     <?php
@@ -19991,7 +19991,7 @@ if ($agent_display_dialable_leads > 0)
 <span style="position:absolute;left:200px;top:200px;z-index:<?php $zi++; echo $zi ?>;" id="AlertBox">
 <table border="2" bgcolor="#666666" cellpadding="2" cellspacing="1">
 <tr><td bgcolor="#f0f0f0" align="left">
-<font face="arial,helvetica" size="2"><b> &nbsp; <?php echo _QXZ("Agent Alert!"); ?></b></font>
+<font face="arial,helvetica" size="2"><b> &nbsp; <?php echo _QXZ("Alerta!"); ?></b></font>
 </td></tr>
 <tr><td bgcolor="#E6E6E6">
 <table border="0" bgcolor="#E3E3E3" width="400">
@@ -20031,5 +20031,3 @@ if ($agent_display_dialable_leads > 0)
 exit;
 
 ?>
-<!-- this file was personalized by CesarVargas289  --> 
-
