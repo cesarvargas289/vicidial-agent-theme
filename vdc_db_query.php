@@ -1139,7 +1139,7 @@ if ($ACTION == 'LogiNCamPaigns')
 	{
 	if ( (strlen($user)<1) )
 		{
-		echo "<select size=1 class=\"form-control form-control-lg\" placeholder=\"Campaña\" class=\"form-control form-control-lg\" name=VD_campaign id=VD_campaign onFocus=\"login_allowable_campaigns()\">\n";
+		echo "<select size=1 class=\"form-control form-control-lg\" placeholder=\"Campaign\" class=\"form-control form-control-lg\" name=VD_campaign id=VD_campaign onFocus=\"login_allowable_campaigns()\">\n";
 		echo "<option value=\"\">-- ERROR --</option>\n";
 		echo "</select>\n";
 		if ($SSagent_debug_logging > 0) {vicidial_ajax_log($NOW_TIME,$startMS,$link,$ACTION,$php_script,$user,$stage,$lead_id,$session_name,$stmt);}
@@ -1243,7 +1243,7 @@ if ($ACTION == 'LogiNCamPaigns')
 			}
 		else
 			{
-			echo "<select size=1 class=\"form-control form-control-lg\" placeholder=\"Campaña\" name=VD_campaign id=VD_campaign onFocus=\"login_allowable_campaigns()\">\n";
+			echo "<select size=1 class=\"form-control form-control-lg\" placeholder=\"Campaign\" name=VD_campaign id=VD_campaign onFocus=\"login_allowable_campaigns()\">\n";
 			echo "<option value=\"\">-- "._QXZ("USER LOGIN ERROR")." --</option>\n";
 			echo "</select>\n";
 			if ($SSagent_debug_logging > 0) {vicidial_ajax_log($NOW_TIME,$startMS,$link,$ACTION,$php_script,$user,$stage,$lead_id,$session_name,$stmt);}
@@ -1339,8 +1339,8 @@ if ($ACTION == 'LogiNCamPaigns')
 			if ($mel > 0) {mysql_error_logging($NOW_TIME,$link,$mel,$stmt,'00006',$user,$server_ip,$session_name,$one_mysql_log);}
 		$camps_to_print = mysqli_num_rows($rslt);
 
-		echo "<select size=1 class=\"form-control form-control-lg\" placeholder=\"Campaña\" name=VD_campaign id=VD_campaign>\n";
-		echo "<option value=\"\">-- "._QXZ("Seleccione una Campaña")." --</option>\n";
+		echo "<select size=1 class=\"form-control form-control-lg\" placeholder=\"Campaign\" name=VD_campaign id=VD_campaign>\n";
+		echo "<option value=\"\">-- "._QXZ("Select a Campaign")." --</option>\n";
 
 		$o=0;
 		$campSELECTED=0;
@@ -1382,7 +1382,7 @@ if ($ACTION == 'LogiNCamPaigns')
 		}
 	else
 		{
-		echo "<select size=1 class=\"form-control form-control-lg\" placeholder=\"Campaña\" name=VD_campaign id=VD_campaign onFocus=\"login_allowable_campaigns()\">\n";
+		echo "<select size=1 class=\"form-control form-control-lg\" placeholder=\"Campaign\" name=VD_campaign id=VD_campaign onFocus=\"login_allowable_campaigns()\">\n";
 		echo "<option value=\"\">-- "._QXZ("YOU MUST LOG IN TO THE TIMECLOCK FIRST")." --</option>\n";
 		echo "</select>\n";
 		}

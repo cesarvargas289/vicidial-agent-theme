@@ -1092,7 +1092,7 @@ if ($LogiNAJAX > 0)
                         //	alert(logincampaign_query);
                         //	alert(xmlhttp.responseText);
                         document.getElementById("LogiNCamPaigns").innerHTML = Nactiveext;
-                        document.getElementById("LogiNReseT").innerHTML = "<input type=\"button\" class=\"btn btn-info\" value=\"Actualizar Lista de Campañas\" onclick=\"login_allowable_campaigns()\" />";
+                        document.getElementById("LogiNReseT").innerHTML = "<input type=\"button\" class=\"btn btn-info\" value=\"Refresh Campaign List\" onclick=\"login_allowable_campaigns()\" />";
                         document.getElementById("VD_campaign").focus();
                     }
                 }
@@ -1146,19 +1146,19 @@ if ($relogin == 'YES')
     echo "<tr  bgcolor=\"white\"> <td class=\"center-block\" valign=\"bottom\" width=\"170\"><img src=\"$selected_logo\" align=\"center\" border=\"0\" alt=\"Agent Screen\" /></td>";
     echo "</tr>\n";
     echo "<tr><td align=\"left\" colspan=\"2\"><font size=\"1\"> &nbsp; </font></td></tr>\n";
-    echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("N&uacute;mero de Tel&eacute;fono:")."</font>";
+    echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("Phone Number:")."</font>";
     echo "<input type=\"text\" class=\"form-control form-control-sm\" name=\"phone_login\" size=\"8\" maxlength=\"20\" value=\"$phone_login\" /></td></tr>\n";
-    echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("Password del Tel&eacute;fono:")."</font> ";
+    echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("Phone Password:")."</font> ";
     echo "<input class=\"form-control form-control-sm\" type=\"password\" name=\"phone_pass\" size=\"8\" maxlength=\"20\" value=\"$phone_pass\" /></td></tr>\n";
-    echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("Nombre de Usuario:")."</font>";
+    echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("Username:")."</font>";
     echo "<input type=\"text\" class=\"form-control form-control-sm\" name=\"VD_login\" size=\"8\" maxlength=\"20\" value=\"$VD_login\" /></td></tr>\n";
-    echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("Password de Usuario:")."</font> ";
+    echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("User Password:")."</font> ";
     echo "<input type=\"password\" class=\"form-control form-control-sm\" name=\"VD_pass\" size=\"8\" maxlength=\"20\" value=\"$VD_pass\" /></td></tr>\n";
-    echo "<tr><td align=\"left\" valign=\"top\"><font class=\"skb_text\">"._QXZ("Campaña:")."</font> ";
+    echo "<tr><td align=\"left\" valign=\"top\"><font class=\"skb_text\">"._QXZ("Campaign:")."</font> ";
     echo "<font class=\"skb_text\"><span id=\"LogiNCamPaigns\">$camp_form_code</span></font></td></tr>\n";
     echo "<tr><td align=\"left\" colspan=\"2\"><font size=\"1\"> &nbsp; </font></td></tr>\n";
-    echo "<tr><td align=\"center\" colspan=\"2\"><button class=\"btn btn-success\" type=\"submit\" name=\"SUBMIT\" >Enviar</button> &nbsp; \n";
-    echo "<span id=\"LogiNReseT\"><input type=\"button\" class=\"btn btn-primary\" value=\""._QXZ("Actualizar Lista de Campañas")."\" onclick=\"login_allowable_campaigns()\"></span></td></tr>\n";
+    echo "<tr><td align=\"center\" colspan=\"2\"><button class=\"btn btn-success\" type=\"submit\" name=\"SUBMIT\" >Submit</button> &nbsp; \n";
+    echo "<span id=\"LogiNReseT\"><input type=\"button\" class=\"btn btn-primary\" value=\""._QXZ("Refresh Campaign List")."\" onclick=\"login_allowable_campaigns()\"></span></td></tr>\n";
     echo "</table></center>\n";
     echo "</form>\n\n";
     echo "</body>\n\n";
@@ -1184,16 +1184,16 @@ if ($user_login_first == 1)
         echo "<input type=\"hidden\" name=\"JS_browser_width\" id=\"JS_browser_width\" value=\"\" />\n";
         #echo "<input type=\"hidden\" name=\"phone_login\" value=\"$phone_login\">\n";
         #echo "<input type=\"hidden\" name=\"phone_pass\" value=\"$phone_pass\">\n <br>";
-        echo "<center><br /><b>"._QXZ("Nombre de Usuario")."</b><br /><br />";
+        echo "<center><br /><b>"._QXZ("Username")."</b><br /><br />";
         echo "<table width=\"320px\" cellpadding=\"2\" cellspacing=\"0\" bgcolor=\"#$SSframe_background\"><tr align=\"center\">";
         echo "<td class=\"center-block\" valign=\"bottom\"  width=\"170\"><img src=\"$selected_logo\" align=\"center\" border=\"0\" alt=\"Agent Screen\" /></td>";
         echo "</tr>\n";
         echo "<tr><td align=\"left\" colspan=\"2\"><font size=\"1\"> &nbsp; </font></td></tr>\n";
-        echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("Nombre de Usuario").":</font>";
+        echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("Username").":</font>";
         echo "<input type=\"text\" class=\"form-control form-control-sm\" name=\"VD_login\" size=\"8\" maxlength=\"20\" value=\"$VD_login\" /></td></tr>\n";
-        echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("Password de Usuario:")."</font>";
+        echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("User Password:")."</font>";
         echo "<input type=\"password\" class=\"form-control form-control-sm\" name=\"VD_pass\" size=\"8\" maxlength=\"20\" value=\"$VD_pass\" /></td></tr>\n";
-        echo "<tr><td align=\"left\" valign=\"top\"><font class=\"skb_text\">"._QXZ("Campaña:")."</font>  ";
+        echo "<tr><td align=\"left\" valign=\"top\"><font class=\"skb_text\">"._QXZ("Campaign:")."</font>  ";
         echo "<font class=\"skb_text\"><span id=\"LogiNCamPaigns\">$camp_form_code</span></font></td></tr>\n";
         echo "<tr><td align=\"left\" colspan=\"2\"><font size=\"1\"> &nbsp; </font></td></tr>\n";
         echo "<tr><td align=\"center\" colspan=\"2\"><input type=\"submit\" class=\"btn btn-success\" name=\"SUBMIT\" value=\""._QXZ("SUBMIT")."\" /> &nbsp; \n";
@@ -1234,15 +1234,15 @@ if ($user_login_first == 1)
                 echo "<td align=\"center\" class=\"center-block\" valign=\"bottom\" bgcolor=\"#$SSmenu_background\" width=\"170\"><img src=\"$selected_logo\" align=\"center\" border=\"0\" alt=\"Agent Screen\" /></td>";
                 echo "</tr>\n";
                 echo "<tr><td align=\"left\" colspan=\"2\"><font size=\"1\"> &nbsp; </font></td></tr>\n";
-                echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("Numero de Teléfono:")."</font> ";
+                echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("Phone Number:")."</font> ";
                 echo "<input type=\"text\" class=\"form-control form-control-sm\" name=\"phone_login\" size=\"8\" maxlength=\"20\" value=\"$phone_login\" /></td></tr>\n";
-                echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("Password del Tel&eacute;fono:")."</font> ";
+                echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("Phone Password:")."</font> ";
                 echo "<input type=\"password\" class=\"form-control form-control-sm\" name=\"phone_pass\" size=\"8\" maxlength=\"20\" value=\"$phone_pass\" /></td></tr>\n";
-                echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("Nombre de Usuario").":</font> ";
+                echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("Username").":</font> ";
                 echo "<input type=\"text\" class=\"form-control form-control-sm\" name=\"VD_login\" size=\"8\" maxlength=\"20\" value=\"$VD_login\" /></td></tr>\n";
-                echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("Password de Usuario:")."</font> ";
+                echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("User Password:")."</font> ";
                 echo "<input type=\"password\" class=\"form-control form-control-sm\" name=\"VD_pass\" size=\"8\" maxlength=\"20\" value=\"$VD_pass\" /></td></tr>\n";
-                echo "<tr><td align=\"left\" valign=\"top\"><font class=\"skb_text\">"._QXZ("Campaña:")."</font> ";
+                echo "<tr><td align=\"left\" valign=\"top\"><font class=\"skb_text\">"._QXZ("Campaign:")."</font> ";
                 echo "<font class=\"skb_text\"><span id=\"LogiNCamPaigns\">$camp_form_code</span></font></td></tr>\n";
                 echo "<tr><td align=\"left\" colspan=\"2\"><font size=\"1\"> &nbsp; </font></td></tr>\n";
                 echo "<tr><td align=\"center\" colspan=\"2\"><input type=\"submit\" class=\"btn btn-success\" name=\"SUBMIT\" value=\""._QXZ("SUBMIT")."\" /> &nbsp; \n";
@@ -1275,9 +1275,9 @@ if ( (strlen($phone_login)<2) or (strlen($phone_pass)<2) )
     echo "<td align=\"center\" class=\"center-block\" valign=\"bottom\" width=\"170\"><img src=\"$selected_logo\" align=\"center\" border=\"0\" alt=\"Agent Screen\" /></td>";
     echo "</tr>\n";
     echo "<tr><td align=\"left\" colspan=\"2\"><font size=\"1\"> &nbsp; </font></td></tr>\n";
-    echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("N&uacute;mero de Tel&eacute;fono:")."</font>";
+    echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("Phone Number:")."</font>";
     echo "<input type=\"text\" class=\"form-control form-control-sm\" name=\"phone_login\" size=\"8\" maxlength=\"20\" value=\"\" /></td></tr>\n";
-    echo "<tr><td align=\"left\"><font class=\" skb_text\">"._QXZ("Password del Tel&eacute;fono:")."</font> ";
+    echo "<tr><td align=\"left\"><font class=\" skb_text\">"._QXZ("Phone Password:")."</font> ";
     echo "<input type=\"password\" class=\"form-control form-control-sm\" name=\"phone_pass\" size=\"8\" maxlength=\"20\" value=\"\" /></td></tr>\n <br>";
     echo "<tr><td align=\"left\" colspan=\"2\"><font size=\"1\"> &nbsp; </font></td></tr>\n";
     echo "<tr><td align=\"center\" colspan=\"2\"><input type=\"submit\" class=\"btn btn-success\" name=\"SUBMIT\" value=\""._QXZ("SUBMIT")."\" /> &nbsp; \n";
@@ -2498,11 +2498,11 @@ else
         echo "<td align=\"center\" class=\"center-block\" valign=\"bottom\" bgcolor=\"#$SSmenu_background\" width=\"170\"><img src=\"$selected_logo\" align=\"center\" border=\"0\" alt=\"Agent Screen\" /></td>";
         echo "</tr>\n";
         echo "<tr><td align=\"left\" colspan=\"2\"><font size=\"1\"> &nbsp; </font></td></tr>\n";
-        echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("Nombre de Usuario").":</font> ";
+        echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("Username").":</font> ";
         echo "<input type=\"text\" class=\"form-control form-control-sm\" name=\"VD_login\" size=\"8\" maxlength=\"20\" value=\"$VD_login\" /></td></tr>\n";
-        echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("Password de Usuario:")."</font> ";
+        echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("User Password:")."</font> ";
         echo "<input type=\"password\" class=\"form-control form-control-sm\" name=\"VD_pass\" size=\"8\" maxlength=\"20\" value=\"$VD_pass\" /></td></tr>\n";
-        echo "<tr><td align=\"left\" valign=\"top\"><font class=\"skb_text\">"._QXZ("Campaña:")."</font>  ";
+        echo "<tr><td align=\"left\" valign=\"top\"><font class=\"skb_text\">"._QXZ("Campaign:")."</font>  ";
         echo "<font class=\"skb_text\"><span id=\"LogiNCamPaigns\">$camp_form_code</span></font></td></tr>\n <br>";
         echo "<tr><td align=\"left\" colspan=\"2\"><font size=\"1\"> &nbsp; </font></td></tr>\n";
         echo "<tr><td align=\"center\" colspan=\"2\"><input type=\"submit\" class=\"btn btn-success\" name=\"SUBMIT\" value=\""._QXZ("SUBMIT")."\" /> &nbsp; \n";
@@ -2597,9 +2597,9 @@ else
         echo "<td align=\"center\" class=\"center-block\" valign=\"bottom\" bgcolor=\"#$SSmenu_background\" width=\"170\"><img src=\"$selected_logo\" align=\"center\" border=\"0\" alt=\"Agent Screen\" /></td>";
         echo "</tr>\n";
         echo "<tr><td align=\"center\" colspan=\"2\"><font size=\"1\"> &nbsp; <br /><font size=\"3\">"._QXZ("Sorry, your phone login and password are not active in this system, please try again:")." <br /> &nbsp;</font></td></tr>\n";
-        echo "<tr><td align=\"right\"><font class=\"skb_text\">"._QXZ("N&uacute;mero de Tel&eacute;fono:")."</font></td>";
+        echo "<tr><td align=\"right\"><font class=\"skb_text\">"._QXZ("Phone Number:")."</font></td>";
         echo "<td align=\"right\"><input type=\"text\" class=\"form-control form-control-sm\" name=\"phone_login\" size=\"8\" maxlength=\"20\" value=\"$phone_login\"></td></tr>\n";
-        echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("Password del Tel&eacute;fono:")."</font> ";
+        echo "<tr><td align=\"left\"><font class=\"skb_text\">"._QXZ("Phone Password:")."</font> ";
         echo "<input type=\"password\" class=\"form-control form-control-sm\" name=\"phone_pass\" size=8 maxlength=20 value=\"$phone_pass\"></td></tr>\n <br>";
         echo "<tr><td align=\"left\" colspan=\"2\"><font size=\"1\"> &nbsp; </font></td></tr>\n";
         echo "<tr><td align=\"center\" colspan=\"2\"><input type=\"submit\" class=\"btn btn-success\" name=\"SUBMIT\" value=\""._QXZ("SUBMIT")."\" /></td></tr>\n";
@@ -4562,7 +4562,7 @@ $CCAL_OUT .= "</table>";
     var DiaLControl_auto_HTML = "<a href=\"#\" onclick=\"AutoDial_ReSume_PauSe('VDADready','','','','','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_paused.gif") ?>\" border=\"0\" alt=\"You are paused\" /></a>";
     var DiaLControl_auto_HTML_ready = "<a href=\"#\" onclick=\"AutoDial_ReSume_PauSe('VDADpause','','','','','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_active.gif") ?>\" border=\"0\" alt=\"You are active\" /></a>";
     var DiaLControl_auto_HTML_OFF = "<img src=\"./images/<?php echo _QXZ("vdc_LB_blank_OFF.gif") ?>\" border=\"0\" alt=\"pause button disabled\" />";
-    var DiaLControl_manual_HTML = "<a href=\"#\" onclick=\"ManualDialNext('','','','','','0','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber.gif") ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Llamar\"/></a>";
+    var DiaLControl_manual_HTML = "<a href=\"#\" onclick=\"ManualDialNext('','','','','','0','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber.gif") ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Call\"/></a>";
     var image_loading = new Image();
     image_loading.src="./images/<?php echo _QXZ("agent_loading_animation.gif") ?>";
     var image_loading_done = new Image();
@@ -4783,7 +4783,7 @@ $CCAL_OUT .= "</table>";
         {
             if (taskdirection=='MUTING')
             {
-                document.getElementById("AgentMuteSpan").innerHTML = "<a href=\"#CHAN-" + agentchannel + "\" onclick=\"volume_control('UNMUTE','" + agentchannel + "','AgenT');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_volume_UNMUTE.gif") ?>\" border=\"0\" title=\"Desactivar Mute\"/></a>";
+                document.getElementById("AgentMuteSpan").innerHTML = "<a href=\"#CHAN-" + agentchannel + "\" onclick=\"volume_control('UNMUTE','" + agentchannel + "','AgenT');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_volume_UNMUTE.gif") ?>\" border=\"0\" title=\"Unmute\"/></a>";
             }
             else
             {
@@ -4977,7 +4977,7 @@ $CCAL_OUT .= "</table>";
 
             document.getElementById("DialWithCustomer").innerHTML ="<button type=\"button\" class=\"btn btn-secondary btn-sm\" border=\"0\" alt=\"Dial With Customer\" style=\"vertical-align:middle\"> Conferencia </button></a>";
 
-            document.getElementById("ParkCustomerDial").innerHTML ="<button type=\"button\" class=\"btn btn-secondary btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Llamada de consulta </button></a>";
+            document.getElementById("ParkCustomerDial").innerHTML ="<button type=\"button\" class=\"btn btn-secondary btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Consultative Call </button></a>";
 
             var manual_number = document.vicidial_form.xfernumber.value;
             var manual_number_hidden = document.vicidial_form.xfernumhidden.value;
@@ -5566,7 +5566,7 @@ $CCAL_OUT .= "</table>";
                         {
                             button_click_log = button_click_log + "" + SQLdate + "-----XferHungUp---" + document.vicidial_form.xferchannel.value + "|";
                             xfercall_send_hangup('YES');
-                            alert("La llamada de consulta colgó ");
+                            alert("Consultative call hung up");
                         }
                         if ( (api_switch_lead.length > 0) && (api_switch_lead > 0) )
                         {
@@ -5998,7 +5998,7 @@ $CCAL_OUT .= "</table>";
                                             }
                                             else
                                             {
-                                                live_conf_HTML = live_conf_HTML + "<tr bgcolor=\"" + row_color + "\"><td><font class=\"log_text\">" + display_ct + "</font></td><td><font class=\"" + chan_name_color + "\">" + channelfieldA + "</font></td><td><font class=\"log_text\"><a href=\"#\" onclick=\"livehangup_send_hangup('" + channelfieldA + "');return false;\"><?php echo _QXZ("HANGUP"); ?></a></font></td><td><a href=\"#\" onclick=\"volume_control('UP','" + channelfieldA + "','');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_volume_up.gif") ?>\" border=\"0\" /></a> &nbsp; <a href=\"#\" onclick=\"volume_control('DOWN','" + channelfieldA + "','');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_volume_down.gif") ?>\" border=\"0\" /></a> &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"volume_control('MUTING','" + channelfieldA + "','');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_volume_MUTE.gif") ?>\" border=\"0\" title=\"Mute\"/></a> &nbsp; <a href=\"#\" onclick=\"volume_control('UNMUTE','" + channelfieldA + "','');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_volume_UNMUTE.gif") ?>\" border=\"0\" title=\"Desactivar Mute\"/></a></td></tr>";
+                                                live_conf_HTML = live_conf_HTML + "<tr bgcolor=\"" + row_color + "\"><td><font class=\"log_text\">" + display_ct + "</font></td><td><font class=\"" + chan_name_color + "\">" + channelfieldA + "</font></td><td><font class=\"log_text\"><a href=\"#\" onclick=\"livehangup_send_hangup('" + channelfieldA + "');return false;\"><?php echo _QXZ("HANGUP"); ?></a></font></td><td><a href=\"#\" onclick=\"volume_control('UP','" + channelfieldA + "','');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_volume_up.gif") ?>\" border=\"0\" /></a> &nbsp; <a href=\"#\" onclick=\"volume_control('DOWN','" + channelfieldA + "','');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_volume_down.gif") ?>\" border=\"0\" /></a> &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"volume_control('MUTING','" + channelfieldA + "','');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_volume_MUTE.gif") ?>\" border=\"0\" title=\"Mute\"/></a> &nbsp; <a href=\"#\" onclick=\"volume_control('UNMUTE','" + channelfieldA + "','');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_volume_UNMUTE.gif") ?>\" border=\"0\" title=\"Unmute\"/></a></td></tr>";
                                             }
                                         }
                                     }
@@ -8319,9 +8319,9 @@ $CCAL_OUT .= "</table>";
 
                                 document.getElementById("DialWithCustomer").innerHTML ="<button type=\"button\" class=\"btn btn-secondary btn-sm\" border=\"0\" alt=\"Dial With Customer\" style=\"vertical-align:middle\"> Conferencia </button>";
 
-                                document.getElementById("ParkCustomerDial").innerHTML ="<button type=\"button\" class=\"btn btn-secondary btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Llamada de consulta </button>";
+                                document.getElementById("ParkCustomerDial").innerHTML ="<button type=\"button\" class=\"btn btn-secondary btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Consultative Call </button>";
 
-                                document.getElementById("HangupXferLine").innerHTML ="<a href=\"#\" onclick=\"xfercall_send_hangup('YES');return false;\"><button type=\"button\" class=\"btn btn-danger btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Terminar llamada de consulta </button></a>";
+                                document.getElementById("HangupXferLine").innerHTML ="<a href=\"#\" onclick=\"xfercall_send_hangup('YES');return false;\"><button type=\"button\" class=\"btn btn-danger btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> End consultative call </button></a>";
 
                                 document.getElementById("ParkXferLine").innerHTML ="<a href=\"#\" onclick=\"mainxfer_send_redirect('ParKXfeR','" + lastxferchannel + "','" + server_ip + "','','','','YES');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_XB_parkxferline_ON.gif"); ?>\" border=\"0\" alt=\"Park Xfer Line\" style=\"vertical-align:middle\" /></a>";
 
@@ -8493,7 +8493,7 @@ $CCAL_OUT .= "</table>";
             if (taskCheckOR == 'YES')
             {
                 document.getElementById("DialWithCustomer").innerHTML ="<a href=\"#\" onclick=\"SendManualDial('YES','YES');return false;\"><button type=\"button\" class=\"btn btn-success btn-sm\" border=\"0\" alt=\"Dial With Customer\" style=\"vertical-align:middle\"> Conferencia </button></a>";
-                document.getElementById("ParkCustomerDial").innerHTML ="<a href=\"#\" onclick=\"xfer_park_dial('YES');return false;\"><button type=\"button\" class=\"btn btn-warning btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Llamada de consulta </button></a>";
+                document.getElementById("ParkCustomerDial").innerHTML ="<a href=\"#\" onclick=\"xfer_park_dial('YES');return false;\"><button type=\"button\" class=\"btn btn-warning btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Consultative Call </button></a>";
             }
         }
     }
@@ -8821,7 +8821,7 @@ $CCAL_OUT .= "</table>";
 
             if (starting_dial_level == 0)
             {
-                document.getElementById("DiaLControl").innerHTML = "<a href=\"#\" onclick=\"ManualDialNext('','','','','','0','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Llamar\" /></a>";
+                document.getElementById("DiaLControl").innerHTML = "<a href=\"#\" onclick=\"ManualDialNext('','','','','','0','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Call\" /></a>";
             }
             else
             {
@@ -8829,7 +8829,7 @@ $CCAL_OUT .= "</table>";
                 {
                     auto_dial_level=starting_dial_level;
 
-                    document.getElementById("DiaLControl").innerHTML = "<a href=\"#\" onclick=\"AutoDial_ReSume_PauSe('VDADready','','','','','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_paused.gif"); ?>\" border=\"0\" alt=\"You are paused\" /></a><br /><a href=\"#\" onclick=\"ManualDialNext('','','','','','0','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Llamar\" /></a>";
+                    document.getElementById("DiaLControl").innerHTML = "<a href=\"#\" onclick=\"AutoDial_ReSume_PauSe('VDADready','','','','','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_paused.gif"); ?>\" border=\"0\" alt=\"You are paused\" /></a><br /><a href=\"#\" onclick=\"ManualDialNext('','','','','','0','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Call\" /></a>";
                 }
                 else
                 {
@@ -8856,13 +8856,13 @@ $CCAL_OUT .= "</table>";
                 else
                 {auto_dial_level=starting_dial_level;}
 
-                document.getElementById("DiaLControl").innerHTML = "<img src=\"./images/<?php echo _QXZ("vdc_LB_blank_OFF.gif"); ?>\" border=\"0\" alt=\"pause button disabled\" /><br /><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber_OFF.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Llamar\" />";
+                document.getElementById("DiaLControl").innerHTML = "<img src=\"./images/<?php echo _QXZ("vdc_LB_blank_OFF.gif"); ?>\" border=\"0\" alt=\"pause button disabled\" /><br /><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber_OFF.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Call\" />";
             }
             else
             {
                 if (active_ingroup_dial.length < 1)
                 {
-                    document.getElementById("DiaLControl").innerHTML = "<img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber_OFF.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Llamar\"/>";
+                    document.getElementById("DiaLControl").innerHTML = "<img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber_OFF.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Call\"/>";
                 }
             }
             var manual_dial_only_type_flag = '';
@@ -8883,18 +8883,18 @@ $CCAL_OUT .= "</table>";
 
                 if (alt_phone_dialing == 1)
                 {
-                    var man_status = "Preview the Lead then <a href=\"#\" onclick=\"ManualDialOnly('" + manual_dial_only_type_flag + "','YES')\"><font class=\"preview_text\"> <?php echo _QXZ("Marcar Número"); ?></font></a> or <a href=\"#\" onclick=\"ManualDialSkip('YES')\"><font class=\"preview_text\"><?php echo _QXZ("Saltar Número"); ?></font></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"ManualDialOnly('ALTPhonE','YES')\"><font class=\"preview_text\"><?php echo _QXZ("ALT PHONE"); ?></font></a> or <a href=\"#\" onclick=\"ManualDialOnly('AddresS3','YES')\"><font class=\"preview_text\"><?php echo _QXZ("ADDRESS3"); ?></font></a>";
+                    var man_status = "Preview the Lead then <a href=\"#\" onclick=\"ManualDialOnly('" + manual_dial_only_type_flag + "','YES')\"><font class=\"preview_text\"> <?php echo _QXZ("Dial Number"); ?></font></a> or <a href=\"#\" onclick=\"ManualDialSkip('YES')\"><font class=\"preview_text\"><?php echo _QXZ("Skip Number"); ?></font></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"ManualDialOnly('ALTPhonE','YES')\"><font class=\"preview_text\"><?php echo _QXZ("ALT PHONE"); ?></font></a> or <a href=\"#\" onclick=\"ManualDialOnly('AddresS3','YES')\"><font class=\"preview_text\"><?php echo _QXZ("ADDRESS3"); ?></font></a>";
                     if (manual_preview_dial=='PREVIEW_ONLY')
                     {
-                        var man_status = "Preview the Lead then <a href=\"#\" onclick=\"ManualDialOnly('" + manual_dial_only_type_flag + "','YES')\"><font class=\"preview_text\"> <?php echo _QXZ("Marcar Número"); ?></font></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"ManualDialOnly('ALTPhonE','YES')\"><font class=\"preview_text\"><?php echo _QXZ("ALT PHONE"); ?></font></a> or <a href=\"#\" onclick=\"ManualDialOnly('AddresS3','YES')\"><font class=\"preview_text\"><?php echo _QXZ("ADDRESS3"); ?></font></a>";
+                        var man_status = "Preview the Lead then <a href=\"#\" onclick=\"ManualDialOnly('" + manual_dial_only_type_flag + "','YES')\"><font class=\"preview_text\"> <?php echo _QXZ("Dial Number"); ?></font></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"ManualDialOnly('ALTPhonE','YES')\"><font class=\"preview_text\"><?php echo _QXZ("ALT PHONE"); ?></font></a> or <a href=\"#\" onclick=\"ManualDialOnly('AddresS3','YES')\"><font class=\"preview_text\"><?php echo _QXZ("ADDRESS3"); ?></font></a>";
                     }
                 }
                 else
                 {
-                    var man_status = "Preview the Lead then <a href=\"#\" onclick=\"ManualDialOnly('" + manual_dial_only_type_flag + "','YES')\"><font class=\"preview_text\"> <?php echo _QXZ("Marcar Número"); ?></font></a> o <a href=\"#\" onclick=\"ManualDialSkip('YES')\"><font class=\"preview_text\"><?php echo _QXZ("Saltar Número"); ?></font></a>";
+                    var man_status = "Preview the Lead then <a href=\"#\" onclick=\"ManualDialOnly('" + manual_dial_only_type_flag + "','YES')\"><font class=\"preview_text\"> <?php echo _QXZ("Dial Number"); ?></font></a> o <a href=\"#\" onclick=\"ManualDialSkip('YES')\"><font class=\"preview_text\"><?php echo _QXZ("Skip Number"); ?></font></a>";
                     if (manual_preview_dial=='PREVIEW_ONLY')
                     {
-                        var man_status = "<?php echo _QXZ("Preview the Lead then"); ?> <a href=\"#\" onclick=\"ManualDialOnly('" + manual_dial_only_type_flag + "','YES')\"><font class=\"preview_text\"> <?php echo _QXZ("Marcar Número"); ?></font></a>";
+                        var man_status = "<?php echo _QXZ("Preview the Lead then"); ?> <a href=\"#\" onclick=\"ManualDialOnly('" + manual_dial_only_type_flag + "','YES')\"><font class=\"preview_text\"> <?php echo _QXZ("Dial Number"); ?></font></a>";
                     }
                 }
             }
@@ -9012,7 +9012,7 @@ $CCAL_OUT .= "</table>";
                                     {
                                         auto_dial_level=starting_dial_level;
 
-                                        document.getElementById("DiaLControl").innerHTML = "<a href=\"#\" onclick=\"AutoDial_ReSume_PauSe('VDADready','','','','','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_paused.gif"); ?>\" border=\"0\" alt=\"You are paused\" /></a><br /><a href=\"#\" onclick=\"ManualDialNext('','','','','','0','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Llamar\" /></a>";
+                                        document.getElementById("DiaLControl").innerHTML = "<a href=\"#\" onclick=\"AutoDial_ReSume_PauSe('VDADready','','','','','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_paused.gif"); ?>\" border=\"0\" alt=\"You are paused\" /></a><br /><a href=\"#\" onclick=\"ManualDialNext('','','','','','0','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Call\" /></a>";
                                     }
                                     else
                                     {
@@ -9492,11 +9492,11 @@ $CCAL_OUT .= "</table>";
             {
                 auto_dial_level=starting_dial_level;
 
-                document.getElementById("DiaLControl").innerHTML = "<img src=\"./images/<?php echo _QXZ("vdc_LB_blank_OFF.gif"); ?>\" border=\"0\" alt=\"pause button disabled\" /><br /><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber_OFF.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Llamar\"/>";
+                document.getElementById("DiaLControl").innerHTML = "<img src=\"./images/<?php echo _QXZ("vdc_LB_blank_OFF.gif"); ?>\" border=\"0\" alt=\"pause button disabled\" /><br /><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber_OFF.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Call\"/>";
             }
             else
             {
-                document.getElementById("DiaLControl").innerHTML = "<img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber_OFF.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Llamar\"/>";
+                document.getElementById("DiaLControl").innerHTML = "<img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber_OFF.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Call\"/>";
             }
 
             var xmlhttp=false;
@@ -9618,11 +9618,11 @@ $CCAL_OUT .= "</table>";
 
                             if (dial_method == "INBOUND_MAN")
                             {
-                                document.getElementById("DiaLControl").innerHTML = "<a href=\"#\"  onclick=\"AutoDial_ReSume_PauSe('VDADready','','','','','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_paused.gif"); ?>\" border=\"0\" alt=\"You are paused\" /></a><br /><a href=\"#\" onclick=\"ManualDialNext('','','','','','0','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Llamar\"/></a>";
+                                document.getElementById("DiaLControl").innerHTML = "<a href=\"#\"  onclick=\"AutoDial_ReSume_PauSe('VDADready','','','','','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_paused.gif"); ?>\" border=\"0\" alt=\"You are paused\" /></a><br /><a href=\"#\" onclick=\"ManualDialNext('','','','','','0','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Call\"/></a>";
                             }
                             else
                             {
-                                document.getElementById("DiaLControl").innerHTML = "<a href=\"#\" onclick=\"ManualDialNext('','','','','','0','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Llamar\"/></a>";
+                                document.getElementById("DiaLControl").innerHTML = "<a href=\"#\" onclick=\"ManualDialNext('','','','','','0','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Call\"/></a>";
                             }
                         }
                     }
@@ -9960,7 +9960,7 @@ $CCAL_OUT .= "</table>";
                     {
                         auto_dial_level=starting_dial_level;
 
-                        document.getElementById("DiaLControl").innerHTML = "<a href=\"#\" onclick=\"AutoDial_ReSume_PauSe('VDADready','','','','','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_paused.gif"); ?>\" border=\"0\" alt=\"You are paused\" /></a><br /><a href=\"#\" onclick=\"ManualDialNext('','','','','','0','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Llamar\"/></a>";
+                        document.getElementById("DiaLControl").innerHTML = "<a href=\"#\" onclick=\"AutoDial_ReSume_PauSe('VDADready','','','','','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_paused.gif"); ?>\" border=\"0\" alt=\"You are paused\" /></a><br /><a href=\"#\" onclick=\"ManualDialNext('','','','','','0','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Call\"/></a>";
                     }
                     else
                     {
@@ -10779,7 +10779,7 @@ $CCAL_OUT .= "</table>";
 
                             if (dial_method == "INBOUND_MAN")
                             {
-                                document.getElementById("DiaLControl").innerHTML = "<img src=\"./images/<?php echo _QXZ("vdc_LB_blank_OFF.gif"); ?>\" border=\"0\" alt=\"pause button disabled\" /><br /><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber_OFF.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Llamar\"/>";
+                                document.getElementById("DiaLControl").innerHTML = "<img src=\"./images/<?php echo _QXZ("vdc_LB_blank_OFF.gif"); ?>\" border=\"0\" alt=\"pause button disabled\" /><br /><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber_OFF.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Call\"/>";
                             }
                             else
                             {
@@ -12375,7 +12375,7 @@ $CCAL_OUT .= "</table>";
                         }
                         else
                         {
-                            document.getElementById("DiaLControl").innerHTML = "<a href=\"#\" onclick=\"ManualDialNext('','','','','','0','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Llamar\"/></a>";
+                            document.getElementById("DiaLControl").innerHTML = "<a href=\"#\" onclick=\"ManualDialNext('','','','','','0','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Call\"/></a>";
                         }
                         reselect_alt_dial = 0;
                     }
@@ -12407,7 +12407,7 @@ $CCAL_OUT .= "</table>";
                                     document.getElementById("MainStatuSSpan").innerHTML = '';
                                     if (dial_method == "INBOUND_MAN")
                                     {
-                                        document.getElementById("DiaLControl").innerHTML = "<img src=\"./images/<?php echo _QXZ("vdc_LB_blank_OFF.gif"); ?>\" border=\"0\" alt=\"pause button disabled\" /><br /><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber_OFF.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Llamar\"/>";
+                                        document.getElementById("DiaLControl").innerHTML = "<img src=\"./images/<?php echo _QXZ("vdc_LB_blank_OFF.gif"); ?>\" border=\"0\" alt=\"pause button disabled\" /><br /><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber_OFF.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Call\"/>";
                                     }
                                     else
                                     {
@@ -12423,7 +12423,7 @@ $CCAL_OUT .= "</table>";
                         document.getElementById("MainStatuSSpan").style.background = panel_bgcolor;
                         if (dial_method == "INBOUND_MAN")
                         {
-                            document.getElementById("DiaLControl").innerHTML = "<img src=\"./images/<?php echo _QXZ("vdc_LB_blank_OFF.gif"); ?>\" border=\"0\" alt=\"pause button disabled\" /><br /><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber_OFF.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Llamar\"/>";
+                            document.getElementById("DiaLControl").innerHTML = "<img src=\"./images/<?php echo _QXZ("vdc_LB_blank_OFF.gif"); ?>\" border=\"0\" alt=\"pause button disabled\" /><br /><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber_OFF.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Call\"/>";
                         }
                         else
                         {
@@ -12526,9 +12526,9 @@ $CCAL_OUT .= "</table>";
 
             document.getElementById("DialWithCustomer").innerHTML ="<a href=\"#\" onclick=\"SendManualDial('YES','YES');return false;\"><button type=\"button\" class=\"btn btn-success btn-sm\" border=\"0\" alt=\"Dial With Customer\" style=\"vertical-align:middle\"> Conferencia </button></a>";
 
-            document.getElementById("ParkCustomerDial").innerHTML ="<a href=\"#\" onclick=\"xfer_park_dial('YES');return false;\"><button type=\"button\" class=\"btn btn-warning btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Llamada de consulta </button></a>";
+            document.getElementById("ParkCustomerDial").innerHTML ="<a href=\"#\" onclick=\"xfer_park_dial('YES');return false;\"><button type=\"button\" class=\"btn btn-warning btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Consultative Call </button></a>";
 
-            document.getElementById("HangupXferLine").innerHTML ="<button type=\"button\" class=\"btn btn-secondary btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Terminar llamada de consulta </button>";
+            document.getElementById("HangupXferLine").innerHTML ="<button type=\"button\" class=\"btn btn-secondary btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> End consultative call </button>";
 
             document.getElementById("ParkXferLine").innerHTML ="<img src=\"./images/<?php echo _QXZ("vdc_XB_parkxferline_OFF.gif"); ?>\" border=\"0\" alt=\"Park Xfer Line\" style=\"vertical-align:middle\" />";
 
@@ -13086,7 +13086,7 @@ $CCAL_OUT .= "</table>";
         document.vicidial_form.callserverip.value = '';
         document.vicidial_form.xferchannel.value = '';
         document.getElementById("DialWithCustomer").innerHTML ="<a href=\"#\" onclick=\"SendManualDial('YES','YES');return false;\"><button type=\"button\" class=\"btn btn-success btn-sm\" border=\"0\" alt=\"Dial With Customer\" style=\"vertical-align:middle\"> Conferencia </button></a>";
-        document.getElementById("ParkCustomerDial").innerHTML ="<a href=\"#\" onclick=\"xfer_park_dial('YES');return false;\"><button type=\"button\" class=\"btn btn-warning btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Llamada de consulta </button></a>";
+        document.getElementById("ParkCustomerDial").innerHTML ="<a href=\"#\" onclick=\"xfer_park_dial('YES');return false;\"><button type=\"button\" class=\"btn btn-warning btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Consultative Call </button></a>";
         document.getElementById("HangupBothLines").innerHTML ="<a href=\"#\" onclick=\"bothcall_send_hangup('YES');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_XB_hangupbothlines.gif"); ?>\" border=\"0\" alt=\"Hangup Both Lines\" style=\"vertical-align:middle\" /></a>";
 
         var DispoChoice = document.vicidial_form.DispoSelection.value;
@@ -13147,7 +13147,7 @@ $CCAL_OUT .= "</table>";
         document.vicidial_form.callserverip.value = '';
         document.vicidial_form.xferchannel.value = '';
         document.getElementById("DialWithCustomer").innerHTML ="<a href=\"#\" onclick=\"SendManualDial('YES','YES');return false;\"><button type=\"button\" class=\"btn btn-success btn-sm\" border=\"0\" alt=\"Dial With Customer\" style=\"vertical-align:middle\"> Conferencia </button></a>";
-        document.getElementById("ParkCustomerDial").innerHTML ="<a href=\"#\" onclick=\"xfer_park_dial('YES');return false;\"><button type=\"button\" class=\"btn btn-warning btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Llamada de consulta </button></a>";
+        document.getElementById("ParkCustomerDial").innerHTML ="<a href=\"#\" onclick=\"xfer_park_dial('YES');return false;\"><button type=\"button\" class=\"btn btn-warning btn-sm\"border=\"0\" alt=\"Park Customer Dial\"style=\"vertical-align:middle\"> Consultative Call </button></a>";
         document.getElementById("HangupBothLines").innerHTML ="<a href=\"#\" onclick=\"bothcall_send_hangup('YES');return false;\"><img src=\"./images/<?php echo _QXZ("vdc_XB_hangupbothlines.gif"); ?>\" border=\"0\" alt=\"Hangup Both Lines\" style=\"vertical-align:middle\" /></a>";
 
         var DispoChoice = document.vicidial_form.DispoSelection.value;
@@ -14544,7 +14544,7 @@ $CCAL_OUT .= "</table>";
                     if (tempreason=='READY_TIMEOUT')
                     {logout_content="<?php echo _QXZ("You have been ready for too long, you have been logged out of your session"); ?><br /><br />";}
 
-                    document.getElementById("LogouTBoxLink").innerHTML = logout_content + "<font class=\"loading_text\"><a href=\"" + agcPAGE + "?relogin=YES&session_epoch=" + epoch_sec + "&session_id=" + session_id + "&session_name=" + session_name + "&VD_login=" + user + "&VD_campaign=" + campaign + "&phone_login=" + original_phone_login + "&phone_pass=" + phone_pass + "&VD_pass=" + orig_pass + "\" onclick=\"needToConfirmExit = false;\"><?php echo _QXZ("CLICK AQUÍ PARA INICIAR SESIÓN DE NUEVO"); ?></a></font>\n";
+                    document.getElementById("LogouTBoxLink").innerHTML = logout_content + "<font class=\"loading_text\"><a href=\"" + agcPAGE + "?relogin=YES&session_epoch=" + epoch_sec + "&session_id=" + session_id + "&session_name=" + session_name + "&VD_login=" + user + "&VD_campaign=" + campaign + "&phone_login=" + original_phone_login + "&phone_pass=" + phone_pass + "&VD_pass=" + orig_pass + "\" onclick=\"needToConfirmExit = false;\"><?php echo _QXZ("CLICK HERE TO LOGIN AGAIN"); ?></a></font>\n";
 
                     logout_stop_timeouts = 1;
 
@@ -17153,7 +17153,7 @@ $CCAL_OUT .= "</table>";
                     if (document.vicidial_form.DiaLAltPhonE.checked==true)
                     {
                         reselect_alt_dial = 1;
-                        document.getElementById("DiaLControl").innerHTML = "<a href=\"#\" onclick=\"ManualDialNext('','','','','','0','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Llamar\"/></a>";
+                        document.getElementById("DiaLControl").innerHTML = "<a href=\"#\" onclick=\"ManualDialNext('','','','','','0','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Call\"/></a>";
 
                         document.getElementById("MainStatuSSpan").innerHTML = "<?php echo _QXZ("Dial Next Call"); ?>";
                     }
@@ -17821,7 +17821,7 @@ $CCAL_OUT .= "</table>";
             document.getElementById(divvar).innerHTML = '';
             if (divvar == 'DiaLLeaDPrevieW')
             {
-                var buildDivHTML = "<font class=\"preview_text\"> <input type=\"checkbox\" name=\"LeadPreview\" size=\"1\" value=\"0\" /> <?php echo _QXZ("Mostrar Siguiente Número"); ?><br /></font>";
+                var buildDivHTML = "<font class=\"preview_text\"> <input type=\"checkbox\" name=\"LeadPreview\" size=\"1\" value=\"0\" /> <?php echo _QXZ("Show Next Number"); ?><br /></font>";
                 document.getElementById("DiaLLeaDPrevieWHide").innerHTML = buildDivHTML;
             }
             if (divvar == 'DiaLDiaLAltPhonE')
@@ -17841,7 +17841,7 @@ $CCAL_OUT .= "</table>";
             if (divvar == 'DiaLLeaDPrevieW')
             {
                 document.getElementById("DiaLLeaDPrevieWHide").innerHTML = '';
-                var buildDivHTML = "<font class=\"preview_text\"> <input type=\"checkbox\" name=\"LeadPreview\" size=\"1\" value=\"0\" /> <?php echo _QXZ("Mostrar Siguiente Número"); ?><br /></font>";
+                var buildDivHTML = "<font class=\"preview_text\"> <input type=\"checkbox\" name=\"LeadPreview\" size=\"1\" value=\"0\" /> <?php echo _QXZ("Show Next Number"); ?><br /></font>";
                 document.getElementById(divvar).innerHTML = buildDivHTML;
                 if (reselect_preview_dial==1)
                 {document.vicidial_form.LeadPreview.checked=true}
@@ -18086,7 +18086,7 @@ $CCAL_OUT .= "</table>";
             {
                 if (dial_method == "INBOUND_MAN")
                 {
-                    document.getElementById("DiaLControl").innerHTML = "<a href=\"#\" onclick=\"AutoDial_ReSume_PauSe('VDADready','','','','','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_paused.gif"); ?>\" border=\"0\" alt=\"You are paused\" /></a><br /><a href=\"#\" onclick=\"ManualDialNext('','','','','','0','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Llamar\"/></a>";
+                    document.getElementById("DiaLControl").innerHTML = "<a href=\"#\" onclick=\"AutoDial_ReSume_PauSe('VDADready','','','','','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_paused.gif"); ?>\" border=\"0\" alt=\"You are paused\" /></a><br /><a href=\"#\" onclick=\"ManualDialNext('','','','','','0','','','YES');\"><img src=\"./images/<?php echo _QXZ("vdc_LB_dialnextnumber.gif"); ?>\" border=\"0\" alt=\"Dial Next Number\" title=\"Call\"/></a>";
                     if (manual_dial_preview == 1)
                     {buildDiv('DiaLLeaDPrevieW');}
                 }
@@ -18313,11 +18313,11 @@ $zi=2;
             <input type="hidden" name="FORM_LOADED" id="FORM_LOADED" value="0"/>
 
                         <div style="color: #FFFFFF"><?php echo _QXZ("Logueado en el usuario:"); ?></font></a><?php
-                echo _QXZ(" %1s en el teléfono: %2s", 0, '', $VD_login, $SIP_user);
+                echo _QXZ(" %1s on phone: %2s", 0, '', $VD_login, $SIP_user);
                 if ($on_hook_agent == 'Y') {
                     echo "(<a href=\"#\" onclick=\"NoneInSessionCalL();return false;\">" . _QXZ("ring") . "</a>)";
                 }
-                echo "&nbsp; " . _QXZ("a la campaña") . " $VD_campaign&nbsp; ";
+                echo "&nbsp; " . _QXZ("to campaign") . " $VD_campaign&nbsp; ";
                 ?> &nbsp; &nbsp; <span id="agentchannelSPAN"></span></div>
 
         </button>
@@ -18326,7 +18326,7 @@ $zi=2;
                 <div >
                 <li class="nav-item active">
                     <a class="nav-link">
-                        <?php echo "<a href=\"#\" onclick=\"NormalLogout();return false;needToConfirmExit = false;\"> <button type=\"button\" class=\"btn btn-default btn-sm\"><span class=\"glyphicon glyphicon-log-out\"></span> Cerrar Sesión</button> </a>\n"; ?>
+                        <?php echo "<a href=\"#\" onclick=\"NormalLogout();return false;needToConfirmExit = false;\"> <button type=\"button\" class=\"btn btn-default btn-sm\"><span class=\"glyphicon glyphicon-log-out\"></span> Log Out</button> </a>\n"; ?>
                     </a>
                 </li>
 				</div>
@@ -18387,13 +18387,13 @@ $zi=2;
                         <td width="150px" align="left" valign="top">
                             <font class="body_text">
                                 <center>
-                                    <span id="DiaLControl"><a href="#" title="Llamar" onclick="ManualDialNext('','','','','','0','','','YES');">Marcar Siguiente número</a></span><br/>
+                                    <span id="DiaLControl"><a href="#" title="Llamar" onclick="ManualDialNext('','','','','','0','','','YES');">Dial Next Number</a></span><br/>
                                     <span id="ManualQueueNotice"></span>
                                     <span id="ManualQueueChoice"></span>
                                     <span id="DiaLLeaDPrevieW"><font class="preview_text"> <input type="checkbox"
                                                                                                   name="LeadPreview"
                                                                                                   size="1"
-                                                                                                  value="0"/> <?php echo _QXZ("Mostrar Siguiente Número"); ?>
+                                                                                                  value="0"/> <?php echo _QXZ("Show Next Number"); ?>
                                             <br/></font></span>
                                     <span id="DiaLDiaLAltPhonE"><font class="preview_text"> <input type="checkbox"
                                                                                                    name="DiaLAltPhonE"
@@ -18404,7 +18404,7 @@ $zi=2;
                                     <!--
 	<?php
                                     if (($manual_dial_preview) and ($auto_dial_level == 0)) {
-                                        echo "<font class=\"preview_text\"> <input type=\"checkbox\" name=\"LeadPreview\" size=\"1\" value=\"0\" /> Mostrar Siguiente Número<br /></font>";
+                                        echo "<font class=\"preview_text\"> <input type=\"checkbox\" name=\"LeadPreview\" size=\"1\" value=\"0\" /> Show Next Number<br /></font>";
                                     }
                                     if (($alt_phone_dialing) and ($auto_dial_level == 0)) {
                                         echo "<font class=\"preview_text\"> <input type=\"checkbox\" name=\"DiaLAltPhonE\" size=\"1\" value=\"0\" /> ALT PHONE DIAL<br /></font>";
@@ -18412,7 +18412,7 @@ $zi=2;
                                     ?> -->
                                 </center>
                                 <br/>
-                                <div align="center" id="XferControl"><img src="./images/<?php echo _QXZ("vdc_LB_transferconf_OFF.gif"); ?>" border="0" alt="Transferir llamada " title="Transferir Llamada" /></div>
+                                <div align="center" id="XferControl"><img src="./images/<?php echo _QXZ("vdc_LB_transferconf_OFF.gif"); ?>" border="0" alt="Transfer call" title="Transfer Call" /></div>
                                 <?php
                                 if ($quick_transfer_button_enabled > 0) {
                                     echo "<span style=\"background-color: $MAIN_COLOR\" id=\"QuickXfer\"><img src=\"./images/" . _QXZ("vdc_LB_quickxfer_OFF.gif") . "\" border=\"0\" alt=\"Quick Transfer\" /></span>";
@@ -18490,7 +18490,7 @@ $zi=2;
                                                            class="log_title"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> &nbsp; &nbsp;  <span
                     name="callchannel" style="display:none;" id="callchannel" class="cust_form"> </span></font></td>
 	</tr><tr>
-            <h3 class="card-title"><?php echo _QXZ("Información del cliente:"); ?></font> <span
+            <h3 class="card-title"><?php echo _QXZ("Customer Information:"); ?></font> <span
                         id="CusTInfOSpaN"></span> &nbsp; &nbsp; &nbsp; &nbsp;</h3>
             <?php
             if (($agent_lead_search == 'ENABLED') or ($agent_lead_search == 'LIVE_CALL_INBOUND') or ($agent_lead_search == 'LIVE_CALL_INBOUND_AND_MANUAL')) {
@@ -18901,7 +18901,7 @@ $zi=2;
                 			<tr>
                 				 <td align="left" colspan="4">
     							 	<span style="background-color: <?php echo $MAIN_COLOR ?>" id="HangupXferLine">
-    									<button type="button" class="btn btn-secondary btn-sm"border="0" alt="Hangup Xfer Line"style="vertical-align:middle" title="Terminará llamada de consulta pero no la del cliente"> Terminar llamada de consulta</button>
+    									<button type="button" class="btn btn-secondary btn-sm"border="0" alt="Hangup Xfer Line"style="vertical-align:middle" title="Will end consultative call but not the customer call"> End consultative call</button>
     								</span>
 									&nbsp;
 									 <span vertical-align="middle" style="background-color: <?php echo $MAIN_COLOR ?>; " id="ParkControl"></span>
@@ -18924,7 +18924,7 @@ $zi=2;
                 			</tr>
                 			<tr>
                 				<td align="left">
-                					<label border="0" alt="Number to call" style="vertical-align:middle">Número a llamar: </label>
+                					<label border="0" alt="Number to call" style="vertical-align:middle">Number to call: </label>
         								<?php
                                             if ($hide_xfer_number_to_dial == 'ENABLED') {
                                         ?>
@@ -18958,7 +18958,7 @@ $zi=2;
                                     &nbsp;
                                     <span style="background-color: <?php echo $MAIN_COLOR ?>"id="ParkCustomerDial">
                                     	<a href="#"onclick="xfer_park_dial('YES');return false;">
-                                    		<button type="button" class="btn btn-warning btn-sm"border="0" alt="Park Customer Dial"style="vertical-align:middle"> Llamada de consulta </button>
+                                    		<button type="button" class="btn btn-warning btn-sm"border="0" alt="Park Customer Dial"style="vertical-align:middle"> Consultative Call </button>
                                     	</a>
                                     </span>
                                     &nbsp;
@@ -19337,7 +19337,7 @@ if ($agent_display_dialable_leads > 0)
     <table border="0" bgcolor="#CCFFFF" width="<?php echo $CAwidth ?>px" height="<?php echo $WRheight ?>px"><tr><td align="center"> <font class="sd_text"><?php echo _QXZ("No one is in your session:"); ?> <span id="NoneInSessionID"></span><br />
 	<a href="#" onclick="NoneInSessionOK();return false;"><?php echo _QXZ("Volver"); ?></a>
     <br /><br />
-	<span id="NoneInSessionLink"><a href="#" onclick="NoneInSessionCalL();return false;"><?php echo _QXZ("Llamar al Agente de nuevo"); ?></a></font></span>
+	<span id="NoneInSessionLink"><a href="#" onclick="NoneInSessionCalL();return false;"><?php echo _QXZ("Call Agent again"); ?></a></font></span>
     </td></tr></table>
     </span>
 
@@ -19367,7 +19367,7 @@ if ($agent_display_dialable_leads > 0)
 </span>
 
     <span style="position:absolute;left:0px;top:0px;z-index:<?php $zi++; echo $zi ?>;" id="AgenTDisablEBoX">
-    <table border="0" bgcolor="#FFFFFF" width="<?php echo $CAwidth ?>px" height="<?php echo $WRheight ?>px"><tr><td align="center"><font class="sd_text"><?php echo _QXZ("Tu sesión ha sido deshabilitada"); ?><br /><a href="#" onclick="LogouT('DISABLED','');return false;"><?php echo _QXZ("CLICK AQUÍ PARA REINICIAR LA SESIÓN"); ?></a></font><br /><br /><!--<a href="#" onclick="hideDiv('AgenTDisablEBoX');return false;">Go Back</a>-->
+    <table border="0" bgcolor="#FFFFFF" width="<?php echo $CAwidth ?>px" height="<?php echo $WRheight ?>px"><tr><td align="center"><font class="sd_text"><?php echo _QXZ("Your session has been disabled"); ?><br /><a href="#" onclick="LogouT('DISABLED','');return false;"><?php echo _QXZ("CLICK HERE TO RESTART THE SESSION"); ?></a></font><br /><br /><!--<a href="#" onclick="hideDiv('AgenTDisablEBoX');return false;">Go Back</a>-->
     </td></tr></table>
 </span>
 
@@ -19425,13 +19425,13 @@ if ($agent_display_dialable_leads > 0)
 
  -->
  
- <!-- Creación de modal para la tipificación  -->   
+ <!-- Disposition modal -->   
 
 <div style="position:absolute;left:80px;top:40px;" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" id="DispoSelectBox" >
 		<div class="modal-dialog modal-lg">
     		<div class="modal-content">
       			<div class="modal-header">
-					<h4 class="modal-title" id="myModalLabel">Tipificación</h4>
+					<h4 class="modal-title" id="myModalLabel">Disposition</h4>
     			</div>
     		 	<div class="modal-body">
     		 
@@ -19459,7 +19459,7 @@ if ($agent_display_dialable_leads > 0)
 				</div>
 				 <div class="modal-footer">
        				 <div class="container text-center">
-    					<p class="text-muted credit" style="color:#fff">Doble Click para tipíficar</p>
+    					<p class="text-muted credit" style="color:#fff">Double click to set disposition</p>
   </div>
       </div>
 			</div>
@@ -19962,7 +19962,7 @@ if ($agent_display_dialable_leads > 0)
 </span>
 
     <span style="position:absolute;left:0px;top:0px;z-index:<?php $zi++; echo $zi ?>;" id="DeactivateDOlDSessioNSpan">
-    <table border="0" bgcolor="#FFFFFF" width="<?php echo $CAwidth ?>px" height="<?php echo $WRheight ?>px"><tr><td align="center"><font class="sh_text"><?php echo _QXZ("Otro agente inició sesión usando tu ID de usuario. Esta sesión ha sido desabilitada. Click Ok para continuar e iniciar sesión de nuevo"); ?><br /><a href="#" onclick="hideDiv('DeactivateDOlDSessioNSpan');return false;"><?php echo _QXZ("OK"); ?></a> --></font>
+    <table border="0" bgcolor="#FFFFFF" width="<?php echo $CAwidth ?>px" height="<?php echo $WRheight ?>px"><tr><td align="center"><font class="sh_text"><?php echo _QXZ("Another agent logged in using your user ID. This session has been disabled. Click Ok to continue and log in again"); ?><br /><a href="#" onclick="hideDiv('DeactivateDOlDSessioNSpan');return false;"><?php echo _QXZ("OK"); ?></a> --></font>
     </td></tr></table>
 </span>
 
